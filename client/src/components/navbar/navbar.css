@@ -1,0 +1,176 @@
+/*/ --------------------------------------------------------- /*/
+/*/ -------------------- MAIN NAVIGATION -------------------- /*/
+/*/ --------------------------------------------------------- /*/
+
+img {
+  height: 100px;
+  width: auto;
+}
+
+.navbar {
+  padding: 0.1rem 1rem
+}
+
+.nav-content {
+  margin-top: 40px;
+  margin-bottom: 150px;
+}
+
+.navbar-light .navbar-toggler {
+  background-color: #fff;
+  border-color: #fff;
+  font-size: 150%;
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-dropdown {
+  color: #219251;
+  font-size: 100%;
+}
+
+.nav-icons {font-size: 200%;}
+
+.nav-title {
+  border-top: 1px solid #555;
+  padding-top: 12px;
+}
+
+.logo-small {
+  height: 50px;
+  width: auto;
+  margin: 5px 0;
+}
+
+.right {text-align: right;}
+
+span #companyName {color: #27ae60;}
+
+.loggedInNav {margin-right: 40px;}
+
+/*/ -------------------------------------------------------------- /*/
+/*/ -------------------- SECONDARY NAVIGATION -------------------- /*/
+/*/ -------------------------------------------------------------- /*/
+
+
+.nav-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 19px 10px;
+  margin-top: 10px;
+  font-size: 75%;
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  width: 100%;
+  background: #fff;
+  color: #555;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+
+.nav-button-orders:hover, .nav-button-orders:focus {
+  color: #390e0e;
+  background: #f7f7f7;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.nav-button-manage:hover, .nav-button-manage:focus {
+  color: #390e0e;
+  background: #f7f7f7;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.nav-button-add:hover, .nav-button-add:focus {
+  color: #390e0e;
+  background: #f7f7f7;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.nav-button-logout:hover, .nav-button-logout:focus {
+  color: #fff;
+  background: #700;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.nav-button-login:hover, .nav-button-login:focus {
+  color: #fff;
+  background: #007500;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+/*/ ----------------------------------------------------------- /*/
+/*/ -------------------- MINI-NAV BUTTONS --------------------- /*/
+/*/ ----------------------------------------------------------- /*/
+
+.manage-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  cursor: pointer;
+  border-left: 10px;
+  background: #fff;
+  -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  box-shadow: 0 2px 2px #e3e3e3;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  width: 100%;
+}
+
+.manage-active {
+  color: #555;
+  border-bottom: 1px solid #390e0e;
+  border-left: 1px solid #390e0e;
+}
+
+.manage-button:hover, .manage-button:focus {
+  color: #390e0e;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #390e0e;
+  box-shadow: 0 7px 7px #e3e3e3;
+}
+
+.orders-inactive {color: #555;}
+
+/*/ ------------------------------------------------------ /*/
+/*/ -------------------- DROP DOWN ----------------------- /*/
+/*/ ------------------------------------------------------ /*/
+
+.drop-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  width: 10%;
+  background: #fff;
+  color: #555;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+
+.drop-button:hover {
+  color: #390e0e;
+  background: #f7f7f7;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.drop-down {
+  cursor: pointer;
+  font-size: 145%;
+}
+
+.drop-down-content {
+  text-align: center;
+}
