@@ -14,7 +14,7 @@ class SignUp extends Component {
 
   render() {
     return(
-      <div className="form-content">
+      <div className="form-container">
         <form className="signup-form">
           <div className="container">
             <div className="row">
@@ -37,7 +37,7 @@ class SignUp extends Component {
                   <input className="form-control"
                     onChange={event => this.setState({form: { firstname: event.target.value }})}
                     type="text"
-                    maxlength="62" required placeholder="Firstname"
+                    maxLength="62" required placeholder="Firstname"
                     value={this.state.term} />
                     <p>{this.state.form.firstname}</p>
                 </div>
@@ -51,7 +51,7 @@ class SignUp extends Component {
                   </div>
                   <input className="form-control"
                     onChange={event => this.setState({form: { lastname: event.target.value }})}
-                    type="text" maxlength="62" required placeholder="Lastname"
+                    type="text" maxLength="62" required placeholder="Lastname"
                     value={this.state.form.lastname} />
                     <p>{this.state.form.lastname}</p>
                 </div>
@@ -65,7 +65,7 @@ class SignUp extends Component {
                       <i className="ion-ios-email-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" size="64" maxlength="64" required placeholder="Email" />
+                  <input className="form-control" type="text" size="64" maxLength="64" required placeholder="Email" />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -75,7 +75,7 @@ class SignUp extends Component {
                       <i className="ion-ios-locked-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="password" maxlength="62" required placeholder="Password" />
+                  <input className="form-control" type="password" maxLength="62" required placeholder="Password" />
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ class SignUp extends Component {
                       <i className="ion-ios-home-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxlength="62" placeholder="Address" />
+                  <input className="form-control" type="text" maxLength="62" placeholder="Address" />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -97,7 +97,7 @@ class SignUp extends Component {
                       <i className="ion-ios-home-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxlength="62" placeholder="Address 2" />
+                  <input className="form-control" type="text" maxLength="62" placeholder="Address 2" />
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ class SignUp extends Component {
                       #
                     </div>
                   </div>
-                  <input className="form-control" type="number" maxlength="62" placeholder="Phone number" />
+                  <input className="form-control" type="number" maxLength="62" placeholder="Phone number" />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -119,7 +119,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxlength="62" placeholder="Country" />
+                  <input className="form-control" type="text" maxLength="62" placeholder="Country" />
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxlength="62"  placeholder="City" />
+                  <input className="form-control" type="text" maxLength="62"  placeholder="City" />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -141,7 +141,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxlength="62" placeholder="Zip code" />
+                  <input className="form-control" type="text" maxLength="62" placeholder="Zip code" />
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ class SignUp extends Component {
               <div className="col-md-4 ml-5">
                 <div className="input-group">
                   <div className="form-check">
-                    <label className="form-check-label age-verification" for="age-checkbox">
+                    <label className="form-check-label age-verification" htmlFor="age-checkbox">
                     <input id="age-checkbox" className="form-check-input" type="checkbox" value="" />
                       I am 21 years of age or older
                     </label>

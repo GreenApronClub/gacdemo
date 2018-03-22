@@ -1,0 +1,139 @@
+/*/ ------------------------------------------------------ /*/
+/*/ -------------------- NAV BUTTONS --------------------- /*/
+/*/ ------------------------------------------------------ /*/
+
+.login {
+  height: 75vh;
+}
+
+
+.active-orders-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-weight: 400;
+  cursor: pointer;
+  background: #fff;
+  -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  text-transform: uppercase;
+  box-shadow: 0 2px 2px #e3e3e3;
+  letter-spacing: .1em;
+  width: 100%;
+}
+
+.manage-inactive {color: #555;}
+
+.orders-active {
+  border-bottom: 1px solid #390e0e;
+  border-right: 1px solid #390e0e;
+}
+
+.active-orders-button:hover, .active-orders-button:focus {
+  color: #390e0e;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #390e0e;
+  box-shadow: 0 7px 7px #e3e3e3;
+}
+
+
+/*/ ------------------------------------------------------ /*/
+/*/ ---------------------- FORM ------------------------- /*/
+/*/ ---------------------------------------------------- /*/
+
+.input-group {
+  padding-bottom: 30px;
+}
+
+.form-control:focus {
+  border-color: #390e0e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-content {
+  margin-top: 100px;
+}
+
+.form-control {
+  padding-bottom: 10px;
+  border: 0;
+  border-bottom: 1px solid #390e0e;
+}
+
+.input-group-addon {
+  border: 0;
+  padding-left: 0;
+  background: #fff;
+  padding-bottom: 10px;
+}
+
+.button-form {
+  margin-top: 20px;
+}
+
+.login-form {
+  margin: 40px auto;
+  width: 450px;
+  padding-bottom: 35px;
+}
+
+input, textarea {
+  font-size: 110%;
+  padding-left: 10px;
+}
+
+/*/ --------------------------------------------------- /*/
+/*/ -------------------- BUTTON ---------------------- /*/
+/*/ ------------------------------------------------- /*/
+
+.login-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-weight: 400;
+  cursor: pointer;
+  background: #fff;
+  -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+  letter-spacing: .1em;
+  width: 100%;
+}
+
+.login-button:hover, .login-button:focus {
+  color: #390e0e;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 10px 4px #e3e3e3;
+}
+
+.forgot {
+  text-align: left;
+  padding-bottom: 47px;
+}
+
+/*/ -------------------------------------------------- /*/
+/*/ -------------------- ALERT ----------------------- /*/
+/*/ -------------------------------------------------- /*/
+
+.alert-box {
+  margin-top: 30px;
+}
+
+.closeMe {cursor: pointer;}
+
+.alert-info {
+  background-color: #f4f4f4;
+  border-color: #390e0e;
+  color: #555;
+}
+
+.right span:hover {color: red;}
+
+.alert-dismissible .close {
+  color: red;
+  padding: 0.96rem 1.25rem;
+}
