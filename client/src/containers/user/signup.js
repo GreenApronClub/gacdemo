@@ -1,15 +1,77 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 import './signup.css';
 
 class SignUp extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      form: {
-      firstname: '',
-      lastname: ''
-    }};
+  renderFirstnameField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" required placeholder="Firstname"
+        {...field.input} />
+    );
+  }
+  renderLastnameField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" required placeholder="Lastname"
+        {...field.input} />
+    );
+  }
+  renderEmailField(field) {
+    return (
+      <input className="form-control"
+        type="text" size="64" maxLength="64" required placeholder="Email"
+        {...field.input} />
+    );
+  }
+  renderPasswordField(field) {
+    return (
+      <input className="form-control"
+        type="password" maxLength="62" required placeholder="Password"
+        {...field.input} />
+    );
+  }
+  renderAddressField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" placeholder="Address"
+        {...field.input} />
+    );
+  }
+  renderAddress2Field(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" placeholder="Address 2"
+        {...field.input} />
+    );
+  }
+  renderPhonenumberField(field) {
+    return (
+      <input className="form-control"
+        type="number" maxLength="62" placeholder="Phone number"
+        {...field.input} />
+    );
+  }
+  renderCountryField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" placeholder="Country"
+        {...field.input} />
+    );
+  }
+  renderCityField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62"  placeholder="City"
+        {...field.input} />
+    );
+  }
+  renderZipcodeField(field) {
+    return (
+      <input className="form-control"
+        type="text" maxLength="62" placeholder="Zip code"
+        {...field.input} />
+    );
   }
 
   render() {
@@ -34,12 +96,7 @@ class SignUp extends Component {
                       <i className="ion-ios-person-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control"
-                    onChange={event => this.setState({form: { firstname: event.target.value }})}
-                    type="text"
-                    maxLength="62" required placeholder="Firstname"
-                    value={this.state.term} />
-                    <p>{this.state.form.firstname}</p>
+                  <Field name="firstname" component={this.renderFirstnameField} />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -49,11 +106,7 @@ class SignUp extends Component {
                       <i className="ion-ios-person-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control"
-                    onChange={event => this.setState({form: { lastname: event.target.value }})}
-                    type="text" maxLength="62" required placeholder="Lastname"
-                    value={this.state.form.lastname} />
-                    <p>{this.state.form.lastname}</p>
+                  <Field name="lastname" component={this.renderLastnameField} />
                 </div>
               </div>
             </div>
@@ -65,7 +118,7 @@ class SignUp extends Component {
                       <i className="ion-ios-email-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" size="64" maxLength="64" required placeholder="Email" />
+                  <Field name="email" component={this.renderEmailField} />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -75,7 +128,7 @@ class SignUp extends Component {
                       <i className="ion-ios-locked-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="password" maxLength="62" required placeholder="Password" />
+                  <Field name="password" component={this.renderPasswordField} />
                 </div>
               </div>
             </div>
@@ -87,7 +140,7 @@ class SignUp extends Component {
                       <i className="ion-ios-home-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxLength="62" placeholder="Address" />
+                  <Field name="address" component={this.renderAddressField} />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -97,7 +150,7 @@ class SignUp extends Component {
                       <i className="ion-ios-home-outline"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxLength="62" placeholder="Address 2" />
+                  <Field name="address 2" component={this.renderAddress2Field} />
                 </div>
               </div>
             </div>
@@ -109,7 +162,7 @@ class SignUp extends Component {
                       #
                     </div>
                   </div>
-                  <input className="form-control" type="number" maxLength="62" placeholder="Phone number" />
+                  <Field name="Phonenumber" component={this.renderPhonenumberField} />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -119,7 +172,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxLength="62" placeholder="Country" />
+                  <Field name="Country" component={this.renderCountryField} />
                 </div>
               </div>
             </div>
@@ -131,7 +184,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxLength="62"  placeholder="City" />
+                  <Field name="City" component={this.renderCityField} />
                 </div>
               </div>
               <div className="col-md-6 form-group">
@@ -141,7 +194,7 @@ class SignUp extends Component {
                       <i className="ion-map"></i>
                     </div>
                   </div>
-                  <input className="form-control" type="text" maxLength="62" placeholder="Zip code" />
+                  <Field name="Zipcode" component={this.renderZipcodeField} />
                 </div>
               </div>
             </div>
@@ -167,4 +220,17 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+function validate(values) {
+  const errors = {};
+
+  if(!values.email || values.email.length < 3) {
+    errors.email = "Please enter a valid email address";
+  }
+
+  return errors;
+}
+
+export default reduxForm({
+  validate,
+  form: 'SignUpForm'
+})(SignUp);

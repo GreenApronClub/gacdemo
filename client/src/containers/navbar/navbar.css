@@ -74,19 +74,19 @@ span #companyName {color: #27ae60;}
 
 .nav-button-orders:hover, .nav-button-orders:focus {
   color: #390e0e;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
 .nav-button-manage:hover, .nav-button-manage:focus {
   color: #390e0e;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
 .nav-button-add:hover, .nav-button-add:focus {
   color: #390e0e;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
@@ -97,6 +97,12 @@ span #companyName {color: #27ae60;}
 }
 
 .nav-button-login:hover, .nav-button-login:focus {
+  color: #390e0e;
+  background: #fff;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+}
+
+.nav-button-signup:hover, .nav-button-signup:focus {
   color: #fff;
   background: #007500;
   box-shadow: 0 2px 5px 2px #e3e3e3;
@@ -168,7 +174,7 @@ span #companyName {color: #27ae60;}
 
 .drop-button:hover {
   color: #390e0e;
-  background: #f7f7f7;
+  background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 

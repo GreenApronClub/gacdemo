@@ -81,31 +81,3 @@ input, textarea {
   color: #390e0e;
   box-shadow: 0 4px 10px 4px #e3e3e3;
 }
-
-/*/ --------------------------------------------------- /*/
-/*/ -------------------- BUTTON ---------------------- /*/
-/*/ ------------------------------------------------- /*/
-
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #27ae60;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #219251;
-}
-
-.button-block {
-  display: block;
-  width: 100%;
-}
