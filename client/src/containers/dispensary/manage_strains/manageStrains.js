@@ -36,7 +36,7 @@ class ManageStrains extends Component {
                 <h3>{strain.name}</h3>
               </div>
               <div className="image-box">
-                <img src={strain.image} />
+                <img src={strain.image} alt="" />
               </div>
               <div className="price">
                 ${strain.price}<span>/ gram</span>
@@ -79,5 +79,5 @@ function mapStateToProps(state) {
 }
 
 export default reduxForm({
-  form: 'LoginForm'
+  form: 'SearchForm'
 })(connect(mapStateToProps, { fetchStrains })(ManageStrains));

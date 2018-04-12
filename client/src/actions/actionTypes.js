@@ -3,3 +3,7 @@ export const LOGIN_ERROR = 'login_error';
 export const IS_LOGGED_IN = 'is_logged_in';
 export const FETCH_STRAIN_LIST = 'fetch_strain_list';
 export const FETCH_STRAIN_LIST_ERROR = 'fetch_strain_list_error';
+export const ADD_STRAIN = 'add_strain';
+export const ADD_STRAIN_ERROR = 'add_strain_error';
+export const UPLOAD_IMAGE = 'upload_image';
+export const CLEAR_ALERT = 'clear_alert';

@@ -30,6 +30,7 @@ export function getNavData(currentPath, props) {
         secondaryRoute = props.route.activeOrders.secondaryButton.secondaryRoute;
           break;
       case '/manage-strains':
+      case '/add-strain':
         primaryTitle = props.route.manageStrains.primaryButton.title;
         secondaryTitle = props.route.manageStrains.secondaryButton.title;
         primaryActive = props.route.manageStrains.primaryButton.primaryActive;

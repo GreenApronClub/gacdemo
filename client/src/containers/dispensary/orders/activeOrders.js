@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './activeOrders.css';
 
 class ActiveOrders extends Component {
   render() {
     return(
-      <div><h1 Style="text-align: center; margin-top: 100px;">Coming soon :)</h1></div>
+      <div><h1 className="coming-soon">Coming soon :)</h1></div>
     );
   }
 }

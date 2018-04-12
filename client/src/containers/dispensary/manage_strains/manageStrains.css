@@ -133,7 +133,7 @@ input, textarea {
 .search-button:hover {
   color: #390e0e;
   background-color: #fff;
-  box-shadow: 0 2px 5px 2px #e3e3e3;
+  box-shadow: 1px 0 0 0 #390e0e;
 }
 
 .strains-box .manager-button {
@@ -147,14 +147,14 @@ input, textarea {
   text-transform: uppercase;
   border-top: 1px solid #390e0e;
   letter-spacing: .1em;
-  background: #fff;
+  background: #f4f4f4;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .strains-box .manager-button:hover, .manager-button:focus {
   color: #390e0e;
-  background: #f4f4f4;
+  background: #fff;
 }
 
 .strains-box .button-block {

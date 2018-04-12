@@ -6,5 +6,13 @@ export default {
   strainList: {
     errorMessage: null,
     strains: []
+  },
+  addStrain: {
+    errorMessage: null,
+    successMessage: null
+  },
+  imageUpload: {
+    imageSrc: "http://nahmdong.com/vitalhill/img/default.png",
+    imageName: ''
   }
 }

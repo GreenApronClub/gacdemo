@@ -9,8 +9,9 @@ import './index.css';
 import NavBar from './containers/navbar/navbar';
 import SignUp from './containers/user/signup';
 import Login from './containers/user/login';
-import ActiveOrders from './containers/dispensary/activeOrders';
+import ActiveOrders from './containers/dispensary/orders/activeOrders';
 import ManageStrains from './containers/dispensary/manage_strains/manageStrains';
+import AddStrain from './containers/dispensary/manage_strains/addStrain';
 import reducers from './reducers';
 
 let store = createStore(reducers, applyMiddleware(thunk));
@@ -40,6 +41,13 @@ ReactDOM.render(
             <Redirect to="/login" />
           ) : (
             <ManageStrains />
+          )
+        )} />
+        <Route path="/add-strain" render={() => (
+          !sessionStorage.getItem('jwt') ? (
+            <Redirect to="/login" />
+          ) : (
+            <AddStrain />
           )
         )} />
       </div>

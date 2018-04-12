@@ -1,0 +1,218 @@
+/*/ ------------------------------------------------------ /*/
+/*/ -------------------- FORM ---------------------------- /*/
+/*/ ------------------------------------------------------ /*/
+
+.new-strain-form {
+  margin: 20px auto;
+  width: 450px;
+  padding-bottom: 20px;
+}
+
+.new-strain-form .form-control {
+  font-size: 1.1rem !important;
+}
+
+.new-strain-form .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #555;
+    opacity: 1; /* Firefox */
+}
+
+.new-strain-form select {
+  font-size: 1.1rem;
+  width: 100px;
+  padding: 0.375rem;
+  border: 0;
+  border-bottom: 1px solid #390e0e;
+  color: #495057;
+  text-align: center;
+}
+
+.new-strain-form select:focus {
+  border-color: #390e0e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.price-type-group {
+  padding-bottom: 40px;
+}
+
+.price-input {
+  width: 90px;
+  display: inline;
+}
+
+.centered {
+  display: flex;
+}
+
+.price-field span {
+  margin-top: 80px;
+  margin-left: 10px;
+  font-size: 80%;
+}
+
+.new-strain-form h1 {
+  text-align:center;
+  padding-bottom: 40px;
+  margin-right: 30px;
+}
+
+.new-strain-form .strain-type {
+  margin-top: .125rem;
+  margin-left: 30px;
+  padding-bottom: 11px;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+
+.custom-file-label {
+  border: 0;
+  border-bottom: 1px solid #390e0e;
+  padding: .1rem .75rem
+}
+
+.custom-file-label::after {
+  border: 1px solid #390e0e;
+  border-bottom: 0;
+  background-color: #f4f4f4;
+  padding: .1rem .75rem;
+}
+
+.custom-file-label span {
+}
+
+.accepted-formats {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-preview {
+  width: 450px;
+  height: 250px;
+  margin-top: 10px;
+}
+
+.mt-3 {
+  text-align:center;
+}
+
+.price-gram {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+/*/ -------------------------------------------------------- /*/
+/*/ -------------------- BUTTON ---------------------------- /*/
+/*/ -------------------------------------------------------- /*/
+
+.add-strain-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-weight: 400;
+  cursor: pointer;
+  background: #fff;
+  -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 2px #e3e3e3;
+  letter-spacing: .1em;
+  width: 100%;
+}
+
+.add-strain-button:hover {
+  color: #fff;
+  background-color: #219251;
+  box-shadow: 0 4px 10px 4px #e3e3e3;
+}
+
+.new-strain-form form button {
+  text-align: center;
+  margin-top: 15px;
+  width: 48%;
+}
+
+.button-form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*/ -------------------------------------------------------- /*/
+/*/ -------------------- ALERT ----------------------------- /*/
+/*/ -------------------------------------------------------- /*/
+
+.alert {
+  margin-bottom: 5rem;
+  color: #555;
+}
+
+.custom-alert-close {
+  display: none;
+}
+
+.custom-alert p {
+  margin-bottom: 0;
+}
+
+.alert-closed {
+  display: none;
+}
+
+.custom-alert {
+  display: block !important;
+  position: relative;
+  padding: .75rem 1.25rem;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  border-radius: .25rem;
+  margin-bottom: 5rem;
+  color: #555;
+  padding-right: 4rem;
+}
+
+.custom-close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .7;
+}
+
+.custom-close:hover {
+  color: #219251;
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.alert-dismissible .close {
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.alert-dismissible .close:hover {
+  color: #070;
+}
+
+.show {
+  display: block !important;
+}
