@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addStrain, clearMessage } from '../../../actions/manage_strains/actionAddStrain';
+import { addStrain, clearUpload } from '../../../actions/manage_strains/actionAddStrain';
+import { clearMessage } from '../../../actions/clear/clearAlert';
 import { selectedImage } from '../../../actions/upload/actionImageUpload';
 import classNames from 'classnames';
+import * as types from '../../../actions/actionTypes';
 import './addStrain.css';
 
 class AddStrain extends Component {
+  componentWillUnmount() {
+    var imageData = { name: '', image: 'http://nahmdong.com/vitalhill/img/default.png' }
+    this.props.clearUpload(imageData);
+  }
   renderStrainField(field) {
     return (
     <div>
@@ -79,7 +85,6 @@ class AddStrain extends Component {
         }}
         type="file" />
       <label className="custom-file-label" htmlFor="customFile">Upload an image...</label>
-      <p className="accepted-formats">Please use jpeg/png formats only</p>
     </div>
     );
   }
@@ -90,17 +95,17 @@ class AddStrain extends Component {
 
   render() {
     const { handleSubmit } = this.props;
-    const clear = '';
+    const success = {success: {}};
     var customAlert = classNames({
-      'custom-alert': this.props.successMessage,
+      'custom-alert': this.props.addSuccess.message,
       'custom-alert-close': true
     });
     return(
       <div className="container">
         <form className="new-strain-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className={customAlert}>
-          <p>{this.props.successMessage}</p>
-          <button type="button" className="custom-close" onClick={() => this.props.clearMessage(clear)}>
+          <p><span><b>"{this.props.addSuccess.strain}" </b></span>{this.props.addSuccess.message}</p>
+          <button type="button" className="custom-close" onClick={() => this.props.clearMessage(success, types.ADD_STRAIN)}>
             <span aria-hidden="true"><i className="ion-ios-checkmark"></i></span>
           </button>
         </div>
@@ -112,6 +117,7 @@ class AddStrain extends Component {
             <Field label="Type" name="type" component={this.renderTypeField} />
           </div>
           <Field label="Image" name="strainImage" component={this.renderFileField.bind(this)} />
+          <p className="accepted-formats">Please use jpeg/png formats only</p>
           <img className="image-preview" src={this.props.imageSource} alt="" />
           <div className="mt-3">Selected image: {this.props.imageName}</div>
           <div className="button-form">
@@ -126,7 +132,7 @@ class AddStrain extends Component {
 
 function mapStateToProps(state) {
   return {
-    successMessage: state.addStrain.successMessage,
+    addSuccess: state.addStrain.success,
     imageSource: state.imageData.imageSrc,
     imageName: state.imageData.imageName
   };
@@ -138,5 +144,6 @@ export default withRouter(reduxForm({
   connect(mapStateToProps, {
     addStrain,
     selectedImage,
-    clearMessage })(AddStrain)
+    clearMessage,
+    clearUpload })(AddStrain)
 ));

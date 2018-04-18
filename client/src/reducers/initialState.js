@@ -7,9 +7,23 @@ export default {
     errorMessage: null,
     strains: []
   },
-  addStrain: {
+  strain: {
     errorMessage: null,
-    successMessage: null
+    strainData: ''
+  },
+  editStrainPreview: {
+    errorMessage: null,
+    strain: null
+  },
+  addStrain: {
+    success: {},
+    error: {}
+  },
+  removeStrain: {
+    success: {}
+  },
+  editStrain: {
+    success: {}
   },
   imageUpload: {
     imageSrc: "http://nahmdong.com/vitalhill/img/default.png",

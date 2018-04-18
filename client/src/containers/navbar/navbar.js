@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { selectRoute } from '../../actions/index';
 import { logOut } from '../../actions/logout/actionLogout';
 import { checkUser } from '../../actions/user/actionSession';
 import { bindActionCreators } from 'redux';
-import { getNavData } from './handler_navbar';
+// import { getNavData } from './handler_navbar';
 import './navbar.css';
 
 class NavBar extends Component {
@@ -13,14 +13,13 @@ class NavBar extends Component {
     this.props.checkUser();
   }
   render() {
-    var currentPath = this.props.history.location.pathname;
-    var navData = getNavData(currentPath, this.props);
-    var primaryTitle = navData[0];
-    var secondaryTitle = navData[1];
-    var primaryClass = navData[2];
-    var secondaryClass = navData[3];
-    var primaryRoute = navData[4];
-    var secondaryRoute = navData[5];
+    // var currentPath = this.props.history.location.pathname;
+    // console.log(currentPath)
+    // var navData = getNavData(currentPath, this.props);
+    // var primaryTitle = navData[0];
+    // var secondaryTitle = navData[1];
+    // var primaryRoute = navData[2];
+    // var secondaryRoute = navData[3];
 
     if(this.props.isLoggedIn === true) {
       return (
@@ -42,34 +41,34 @@ class NavBar extends Component {
                     </button>
                   </div>
                   <div className="col-md-3">
-                    <Link to="/active-orders">
+                    <NavLink to="/active-orders">
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-ios-box nav-icons"></i>
                           <h5 className="nav-title">Active orders</h5>
                         </div>
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div className="col-md-3">
-                    <Link to="/manage-strains">
+                    <NavLink to="/manage-strains">
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-leaf nav-icons"></i>
                           <h5 className="nav-title">Manage strains</h5>
                         </div>
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div className="col-md-3">
-                    <Link to="/add-strain">
+                    <NavLink to="/manage-strains/add">
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-plus nav-icons"></i>
                           <h5 className="nav-title">Add strain</h5>
                         </div>
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div className="col-md-3">
                     <button className="nav-button nav-button-logout" data-toggle="collapse" data-target="#navbarContent" onClick={() => this.props.logOut(this.props)}>
@@ -88,26 +87,22 @@ class NavBar extends Component {
               <div className="col-md-6">
                 <div className="dash-box">
                   <div className="content-box">
-                    <Link to={primaryRoute}>
-                      <button className={primaryClass}>
-                        <div>
-                          <h4>{primaryTitle}</h4>
-                        </div>
-                      </button>
-                    </Link>
+                    <NavLink to="/active-orders" className="link-button" activeClassName="activePrimary">
+                      <div>
+                        <h4>Active orders</h4>
+                      </div>
+                    </NavLink>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="dash-box">
                   <div className="content-box">
-                    <Link to={secondaryRoute}>
-                      <button className={secondaryClass}>
-                        <div>
-                          <h4>{secondaryTitle}</h4>
-                        </div>
-                      </button>
-                    </Link>
+                    <NavLink to="/manage-strains" className="link-button" activeClassName="activeSecondary">
+                      <div>
+                        <h4>Manage strains</h4>
+                      </div>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -142,24 +137,24 @@ class NavBar extends Component {
                     </button>
                   </div>
                   <div className="col-md-4">
-                    <Link to="/login">
+                    <NavLink to="/login">
                       <button className="nav-button nav-button-login" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-log-in nav-icons"></i>
                           <h5 className="nav-title">Login</h5>
                         </div>
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                   <div className="col-md-4">
-                    <Link to="/signup">
+                    <NavLink to="/signup">
                       <button className="nav-button nav-button-signup" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-log-in nav-icons"></i>
                           <h5 className="nav-title">Signup</h5>
                         </div>
                       </button>
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -170,26 +165,22 @@ class NavBar extends Component {
               <div className="col-md-6">
                 <div className="dash-box">
                   <div className="content-box">
-                    <Link to="/login">
-                      <button className={primaryClass}>
-                        <div>
-                          <h4>{primaryTitle}</h4>
-                        </div>
-                      </button>
-                    </Link>
+                    <NavLink to="/login" className="link-button" activeClassName="activePrimary">
+                      <div>
+                        <h4>login</h4>
+                      </div>
+                    </NavLink>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="dash-box">
                   <div className="content-box">
-                    <Link to="/signup">
-                      <button className={secondaryClass}>
-                        <div>
-                          <h4>{secondaryTitle}</h4>
-                        </div>
-                      </button>
-                    </Link>
+                    <NavLink to="/signup" className="link-button" activeClassName="activeSecondary">
+                      <div>
+                        <h4>signup</h4>
+                      </div>
+                    </NavLink>
                   </div>
                 </div>
               </div>

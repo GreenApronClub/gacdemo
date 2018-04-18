@@ -17,8 +17,8 @@ export function addStrain(values) {
       if(response.data) {
         var imageData = { name: '', image: 'http://nahmdong.com/vitalhill/img/default.png' }
         dispatch(reset('AddStrainForm'));
-        dispatch({ type: types.UPLOAD_IMAGE, payload: imageData});
-        dispatch({ type: types.ADD_STRAIN, payload: response.data.message });
+        dispatch({ type: types.UPLOAD_IMAGE, payload: imageData });
+        dispatch({ type: types.ADD_STRAIN, payload: response.data });
       }
     })
     .catch(error => {
@@ -27,9 +27,9 @@ export function addStrain(values) {
   }
 }
 
-export function clearMessage(clear) {
+export function clearUpload(imageData) {
   return {
-    type: types.ADD_STRAIN,
-    payload: clear
+    type: types.UPLOAD_IMAGE,
+    payload: imageData
   };
 }

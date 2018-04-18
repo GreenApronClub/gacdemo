@@ -3,9 +3,9 @@
 /*/ ------------------------------------------------- /*/
 
 .search-form {
-  margin: 40px auto;
+  margin: 30px auto 10px;
   width: 350px;
-  padding-bottom: 35px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
@@ -136,13 +136,14 @@ input, textarea {
   box-shadow: 1px 0 0 0 #390e0e;
 }
 
-.strains-box .manager-button {
+.strains-box .manage-button {
   border: 0;
   outline: none;
   border-radius: 0;
   padding: 15px 0;
   cursor: pointer;
   font-weight: 400;
+  text-decoration: none;
   color: #555;
   text-transform: uppercase;
   border-top: 1px solid #390e0e;
@@ -152,7 +153,8 @@ input, textarea {
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
-.strains-box .manager-button:hover, .manager-button:focus {
+
+.strains-box .manage-button:hover, .manage-button:focus {
   color: #390e0e;
   background: #fff;
 }
@@ -160,4 +162,155 @@ input, textarea {
 .strains-box .button-block {
   display: block;
   width: 100%;
+}
+
+/*/ -------------------------------------------------------- /*/
+/*/ -------------------- ALERT ----------------------------- /*/
+/*/ -------------------------------------------------------- /*/
+
+.alert {
+  margin-bottom: 5rem;
+  color: #555;
+}
+
+.custom-alert-close {
+  display: none;
+}
+
+.custom-alert p {
+  margin-bottom: 0;
+}
+
+.alert-closed {
+  display: none;
+}
+
+.manage-strains .custom-alert {
+  display: block !important;
+  position: relative;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  padding-right: 4rem;
+  background-color: #f4f4f4;
+  border-color: #390e0e;
+  color: #555;
+}
+
+.manage-strains .custom-close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .7;
+}
+
+.manage-strains .custom-close:hover {
+  color: #700;
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.alert-dismissible .close {
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.alert-dismissible .close:hover {
+  color: #070;
+}
+
+.show {
+  display: block !important;
+}
+
+/*/ ---------------------------------------------------------------- /*/
+/*/ -------------------- SUCCESS ALERT ----------------------------- /*/
+/*/ --------------------------------------------------------------- /*/
+
+.custom-success-alert-close {
+  display: none;
+}
+
+.custom-success-alert span {
+  text-transform: capitalize;
+}
+
+.custom-success-alert p {
+  margin-bottom: 0;
+}
+
+.alert-closed {
+  display: none;
+}
+
+.manage-strains .custom-success-alert {
+  display: block !important;
+  position: relative;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  padding-right: 4rem;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #555;
+}
+
+.manage-strains .custom-success-close-button {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .7;
+}
+
+.manage-strains .custom-success-close-button:hover {
+  color: #219251;
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.alert-dismissible .close {
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.alert-dismissible .close:hover {
+  color: #070;
+}
+
+.show {
+  display: block !important;
 }

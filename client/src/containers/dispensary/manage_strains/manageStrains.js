@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Field, reduxForm } from 'redux-form';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchStrains } from '../../../actions/strain_list/actionStrainList';
+import classNames from 'classnames';
+import { fetchStrains, searchStrain, clearMessage } from '../../../actions/strain_list/actionStrainList';
+import { clearRemoveMessage } from '../../../actions/manage_strains/actionRemoveStrain';
 import './manageStrains.css';
 
 
@@ -15,7 +18,7 @@ class ManageStrains extends Component {
       <div>
         <div className="input-group">
           <input className="form-control"
-            type="text" maxLength="62" required placeholder="Search"
+            type="text" maxLength="62" placeholder="Search"
             {...field.input} />
             <div className="input-group-prepend">
               <div className="input-group-text">
@@ -42,7 +45,9 @@ class ManageStrains extends Component {
                 ${strain.price}<span>/ gram</span>
               </div>
               <div className="manage-button-box">
-                <button className="manager-button button-block">Manage</button>
+                <Link to={`/manage-strain/${strain._id}`}>
+                  <button id={strain._id} className="manage-button button-block">Manage</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -51,17 +56,43 @@ class ManageStrains extends Component {
   }
 
   onSubmit(values) {
-    // this.props.requestSearch(values, this.props);
-    console.log('search made');
+    this.props.searchStrain(values, this.props.errorMessage);
   }
 
   render() {
     const { handleSubmit } = this.props;
+    const clear = '';
+    var customErrorAlert = classNames({
+      'col-md-10 offset-md-1': true,
+      'custom-alert': this.props.errorMessage,
+      'custom-alert-close': true
+    });
+    var customSuccessAlert = classNames({
+      'col-md-10 offset-md-1': true,
+      'custom-success-alert': this.props.removeSuccess.message,
+      'custom-alert-close': true
+    });
     return (
-      <div>
+      <div className="manage-strains">
         <form className="search-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field label="Search" name="strain" component={this.renderSearchField} />
         </form>
+        <div className="container">
+          <div className={customErrorAlert}>
+            <p>Your search for <b>"{this.props.errorMessage}"</b> did not return any products.</p>
+            <button type="button" className="custom-close" onClick={() => this.props.clearMessage(clear)}>
+              <span aria-hidden="true"><i className="ion-close-circled"></i></span>
+            </button>
+          </div>
+        </div>
+        <div className="container">
+          <div className={customSuccessAlert}>
+            <p><span><b>"{this.props.removeSuccess.strain}"</b></span> {this.props.removeSuccess.message}</p>
+            <button type="button" className="custom-success-close-button" onClick={() => this.props.clearRemoveMessage(clear)}>
+              <span aria-hidden="true"><i className="ion-ios-checkmark"></i></span>
+            </button>
+          </div>
+        </div>
         <div className="strains-box">
           <div className="container">
             <div className="row no-gutters">
@@ -75,9 +106,12 @@ class ManageStrains extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.strainList.errorMessage, strains: state.strainList.strains };
+  return {
+    removeSuccess: state.removeStrain.success,
+    errorMessage: state.strainList.errorMessage,
+    strains: state.strainList.strains };
 }
 
-export default reduxForm({
+export default withRouter(reduxForm({
   form: 'SearchForm'
-})(connect(mapStateToProps, { fetchStrains })(ManageStrains));
+})(connect(mapStateToProps, { fetchStrains, searchStrain, clearMessage, clearRemoveMessage })(ManageStrains)));

@@ -1,0 +1,218 @@
+/*/ ------------------------------------------------------------- /*/
+/*/ -------------------- EDIT STRAIN FORM ----------------------- /*/
+/*/ ------------------------------------------------------------- /*/
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #390e0e;
+  letter-spacing: 1px;
+}
+
+.edit-strain .input-group {
+  padding-bottom: 0;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price .centered {
+  margin-left: 50px;
+}
+
+.edit-type {
+  margin-top: 25px;
+}
+
+.more-details .form-control {
+  color: #390e0e;
+  font-size: 100% !important;
+}
+
+.title .form-control {
+  padding-bottom: 10px;
+  padding-left: 27px;
+  background-color: #f4f4f4;
+  color: #390e0e;
+  font-size: 100% !important;
+  text-transform: uppercase;
+}
+
+.edit-strain .strain-type {
+  margin-top: 10px !important;
+  padding-bottom: 12px !important;
+}
+
+.strain-field {
+  width: 250px !important;
+}
+
+.price .form-control {
+  padding: 0 0.25rem;
+  font-size: 40px !important;
+  font-weight: 300;
+  background-color: #f4f4f4;
+  color: #390e0e;
+}
+
+.edit-strain select {
+  font-size: 1rem;
+  width: 100px;
+  padding: 0.375rem 0.375rem;
+  border: 0;
+  border-bottom: 1px solid #390e0e;
+  color: #495057;
+}
+
+.edit-strain select:focus {
+  border-color: #390e0e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.edit-strain-form {
+  text-align: center;
+}
+
+.custom-file-label {
+  border-radius: 0;
+}
+
+.edit-strain .custom-file {
+  overflow: visible;
+}
+
+.form-control:focus {
+  border-color: #390e0e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: inherit;
+}
+
+.edit-icons {
+  color: #390e0e;
+  margin-left: 10px;
+}
+
+.price-edit-icon {
+  font-size: 75%;
+}
+
+/*/ ----------------------------------------------------------- /*/
+/*/ -------------------- STRAIN DETAILS ----------------------- /*/
+/*/ ----------------------------------------------------------- /*/
+
+.edit-box {
+  margin-top: 10px;
+}
+
+.detail-box {
+  border-radius: 5px;
+  color: #390e0e;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 10px 4px #e3e3e3;
+}
+
+.detail-box:hover {
+
+}
+
+.edit-strain .title {
+  padding: 5px 15px 15px;
+  border-bottom: 1px solid #390e0e;
+  margin-bottom: 0;
+}
+
+.title h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+.action-button {
+  padding: 0;
+  border-radius: 5px;
+  color: #390e0e;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 10px 4px #e3e3e3;
+}
+
+.image-box img {
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+}
+
+.image-box {
+  overflow: hidden;
+  background-color: #000;
+}
+
+.detail-box div {
+  text-align: center;
+}
+
+.edit-strain .price {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 200%;
+  font-weight: 300;
+  padding: 10px 20px 25px;
+}
+
+.edit-strain .accepted-formats {
+  margin-top: 5px;
+}
+
+.edit-strain p {
+  margin-bottom: 5px;
+}
+
+.edit-strain .price-input {
+  width: 80px;
+}
+
+.plan-details i {
+  margin-right: 10px;
+  font-size: 90%;
+}
+
+.detail-box ul li {
+  padding: 5px 0;
+}
+
+.edit-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  cursor: pointer;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-top: 1px solid #390e0e;
+  background: #fff;
+  color: #555;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+}
+
+/*/ -------------------------------------------------- /*/
+/*/ -------------------- BUTTONS --------------------- /*/
+/*/ -------------------------------------------------- /*/
+
+.save-button:hover {
+  color: #fff;
+  background-color: #219251;
+}
+
+.cancel-button:hover {
+  color: #fff;
+  background: #700;
+}

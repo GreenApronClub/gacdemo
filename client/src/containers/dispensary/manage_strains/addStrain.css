@@ -158,6 +158,10 @@
   margin-bottom: 0;
 }
 
+.custom-alert b {
+  text-transform: capitalize;
+}
+
 .alert-closed {
   display: none;
 }

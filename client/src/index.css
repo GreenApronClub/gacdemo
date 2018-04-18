@@ -14,8 +14,13 @@ body {
     font-weight: 500;
     text-rendering: optimizeLegibility;
     font-size: 20px;
+    padding-right: 0 !important;
 }
 
 button:focus {
   outline: none;
+}
+
+a:hover {
+  text-decoration: none;
 }

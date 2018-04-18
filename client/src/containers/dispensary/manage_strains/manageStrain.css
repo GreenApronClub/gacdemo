@@ -1,0 +1,205 @@
+/*/ ----------------------------------------------------------- /*/
+/*/ -------------------- STRAIN DETAILS ----------------------- /*/
+/*/ ----------------------------------------------------------- /*/
+
+.manage-box {
+  margin-top: 10px;
+}
+
+.detail-box {
+  border-radius: 5px;
+  color: #390e0e;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 10px 4px #e3e3e3;
+}
+
+.detail-box:hover {
+
+}
+
+.strain-description,
+.strain-type {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.title {
+  padding: 15px;
+  border-bottom: 1px solid #390e0e;
+  margin-bottom: 30px;
+}
+
+.title h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+.action-button {
+  padding: 0;
+}
+
+.image-box img {
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+}
+
+.image-box {
+  overflow: hidden;
+  background-color: #000;
+}
+
+.detail-box div {
+  text-align: center;
+}
+
+.price {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 20px;
+  font-size: 200%;
+  font-weight: 300;
+}
+
+.plan-details i {
+  margin-right: 10px;
+  font-size: 90%;
+}
+
+.price span {
+  font-size: 30%;
+  font-weight: 300;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+.detail-box ul li {
+  padding: 5px 0;
+}
+
+.manage-strain .manager-button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  cursor: pointer;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border-top: 1px solid #390e0e;
+  background-color: #f4f4f4;
+  color: #555;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+}
+
+/*/ -------------------------------------------------- /*/
+/*/ -------------------- BUTTONS --------------------- /*/
+/*/ -------------------------------------------------- /*/
+
+
+.edit-button:hover {
+  color: #390e0e;
+  background-color: #fff;
+}
+
+.remove-button:hover {
+  color: #fff;
+  background: #700;
+}
+
+/*/ -------------------------------------------------- /*/
+/*/ -------------------- CONFIRM --------------------- /*/
+/*/ -------------------------------------------------- /*/
+
+.remove-confirm {
+  text-align: center;
+}
+
+p strong {
+  text-transform: capitalize;
+}
+
+.modal {
+  margin-bottom: 100px;
+}
+
+/*/ ---------------------------------------------------------------- /*/
+/*/ -------------------- SUCCESS ALERT ----------------------------- /*/
+/*/ --------------------------------------------------------------- /*/
+
+.custom-success-alert-close {
+  display: none;
+}
+
+.custom-success-alert span {
+  text-transform: capitalize;
+}
+
+.custom-success-alert p {
+  margin-bottom: 0;
+}
+
+.alert-closed {
+  display: none;
+}
+
+.manage-strain .custom-success-alert {
+  display: block !important;
+  position: relative;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  padding-right: 4rem;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #555;
+}
+
+.manage-strain .custom-success-close-button {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .7;
+}
+
+.manage-strain .custom-success-close-button:hover {
+  color: #219251;
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.alert-dismissible .close {
+  color: #555;
+  padding: 0.85rem 1rem;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.alert-dismissible .close:hover {
+  color: #070;
+}
+
+.show {
+  display: block !important;
+}

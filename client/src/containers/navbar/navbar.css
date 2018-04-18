@@ -11,6 +11,10 @@ img {
   padding: 0.1rem 1rem
 }
 
+.navbar button {
+  margin-right: 0 !important;
+}
+
 .nav-content {
   margin-top: 40px;
   margin-bottom: 150px;
@@ -108,47 +112,6 @@ span #companyName {color: #27ae60;}
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-/*/ ----------------------------------------------------------- /*/
-/*/ -------------------- MINI-NAV BUTTONS --------------------- /*/
-/*/ ----------------------------------------------------------- /*/
-
-.mini-nav-button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 10px 0;
-  cursor: pointer;
-  border-left: 10px;
-  background: #fff;
-  -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
-  transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
-  box-shadow: 0 2px 2px #e3e3e3;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  width: 100%;
-}
-
-.primary-active {
-  color: #390e0e;
-  border-bottom: 1px solid #390e0e;
-  border-left: 1px solid #390e0e;
-}
-
-.secondary-active {
-  color: #390e0e;
-  border-bottom: 1px solid #390e0e;
-  border-right: 1px solid #390e0e;
-}
-
-.inactive-route {color: #555;}
-
-.mini-nav-button:hover {
-  color: #390e0e;
-  border-bottom: 1px solid #390e0e;
-  box-shadow: 0 7px 7px #e3e3e3;
-}
-
-
 /*/ ------------------------------------------------------ /*/
 /*/ -------------------- DROP DOWN ----------------------- /*/
 /*/ ------------------------------------------------------ /*/
@@ -185,4 +148,41 @@ span #companyName {color: #27ae60;}
 
 .drop-down-content {
   text-align: center;
+}
+
+.link-button {
+    display: inline-block;
+    color: #555;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    cursor: pointer;
+    border-left: 10px;
+    background-color: #fff;
+    -webkit-transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+    transition: color 0.5s, background-color 0.5s, box-shadow 0.5s ease;
+    box-shadow: 0 2px 2px #e3e3e3;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    width: 100%;
+}
+
+.link-button:hover {
+  color: #390e0e;
+  box-shadow: 0 7px 7px #e3e3e3;
+}
+
+.activePrimary {
+  color: #390e0e;
+  border-bottom: 1px solid #390e0e;
+  border-left: 1px solid #390e0e;
+}
+
+.activeSecondary {
+  color: #390e0e;
+  border-bottom: 1px solid #390e0e;
+  border-right: 1px solid #390e0e;
 }
