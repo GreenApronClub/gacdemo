@@ -12,6 +12,7 @@ const DOMPurify = createDompurify(window);
 const validator = require("validator");
 
 exports.login_user = (req, res, next) => {
+  console.log("reached");
   var loginData = req.body;
   var sanitizedLoginData = {};
   for(var key in loginData) {
@@ -42,7 +43,7 @@ exports.login_user = (req, res, next) => {
             });
             // Return information along with the token as a JSON
             //console.log(req.user);
-            res.json({success: true, token: 'JWT ' + token});
+            res.json({isLoggedIn: true, token: 'JWT ' + token});
           } else {
             next(1600);
           }

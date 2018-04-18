@@ -29,8 +29,9 @@ exports.manage_exceptions = (err, req, res, next) => {
           res.json({msg: 'Wrong email/password. Please try again or click "Forgot password?" to reset it', code: err});
           break;
     case 1700:
-          var keyword = req.body.name;
+          var keyword = req.body.strain;
           res.status(400);
+          console.log(keyword)
           res.json({msg: keyword, code: err});
           break;
     case 11000:

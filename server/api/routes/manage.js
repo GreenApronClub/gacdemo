@@ -32,6 +32,7 @@ const upload = multer({
 });
 
 router.get('/', ManageController.get_strains);
+router.post('/', ManageController.search_strain);
 router.post('/add', upload.single('strainImage'), ManageController.add_strain);
 router.post('/:strainId', ManageController.search_strain);
 router.get('/:strainId', passport.authenticate('jwt', { session: false }), ManageController.get_specific_strain);

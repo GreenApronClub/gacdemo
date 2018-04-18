@@ -34,7 +34,7 @@ exports.add_strain = (req, res, next) => {
     if(err) {
       res.json({success: false, message: "Something went wrong!"});
     } else {
-      res.json({success: true, message: "New strain added successfully"});
+      res.json({ success: { message: 'successfully added to inventory', strain: cleanstrainData.name }});
     }
   })
 }
@@ -50,13 +50,10 @@ exports.get_strains = (req, res) => {
 }
 
 exports.search_strain = (req, res, next) => {
-  console.log("called")
-  if (req.body.name) {
-    var query = strain.find({ name: req.body.name.toLowerCase() }).select('name price image _id');
+  if (req.body.strain) {
+    var query = strain.find({ name: req.body.strain.toLowerCase() }).select('name price image _id');
     query.exec(function(err, strain) {
-      if(err) {
-        return err;
-      }
+      if(err) return err;
 
       if(strain == '') {
         var errorCode = 1700;
@@ -65,12 +62,19 @@ exports.search_strain = (req, res, next) => {
         res.json(strain);
       }
     });
+  } else {
+    var query = strain.find({}).select('name price image _id');
+    query.exec(function(err, strains) {
+      if(err) return err;
+      console.log("FETCHING STRAINS...")
+      console.log(strains);
+      res.json(strains);
+      });
   }
 }
 
 exports.get_specific_strain = (req, res, next) => {
   if (req.params.strainId) {
-    console.log(req.body.check);
     var query = strain.findById(req.params.strainId).select('name price image description type _id');
     query.exec(function(err, strain) {
       if(err) {
@@ -117,7 +121,7 @@ exports.update_specific_strain = (req, res, next) => {
       if(!updatedStrain) {
         next(new Error('No strain found to update'), false);
       } else {
-        res.json({message: 'Changes saved!'})
+        res.json({ success: { message: 'successfully updated', strain: updatedStrain.name }});
       }
     });
     console.log(req.body);
@@ -125,13 +129,14 @@ exports.update_specific_strain = (req, res, next) => {
 }
 
 exports.delete_strain = (req, res, next) => {
+    console.log("reached")
   if (req.params.strainId) {
     var query = strain.findByIdAndRemove(req.params.strainId);
     query.exec(function(err, strain) {
       if(err) {
         next(new Error('Could not delete'), false);
       } else {
-        res.json({message: 'Successfully deleted!'});
+        res.json({ success: { message: 'successfully removed from inventory', strain: strain.name }});
       }
     });
   }
