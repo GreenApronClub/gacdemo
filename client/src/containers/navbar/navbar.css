@@ -186,3 +186,13 @@ span #companyName {color: #27ae60;}
   border-bottom: 1px solid #390e0e;
   border-right: 1px solid #390e0e;
 }
+
+.activePrimaryMobile {
+  color: #390e0e;
+  border-bottom: 1px solid #390e0e;
+}
+
+.activeSecondaryMobile {
+  color: #390e0e;
+  border-bottom: 1px solid #390e0e;
+}

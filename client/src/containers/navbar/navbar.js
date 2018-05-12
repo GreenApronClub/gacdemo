@@ -119,7 +119,7 @@ class NavBar extends Component {
       );
     } else {
       return (
-        <div className="container">
+        <div>
           <nav className="navbar navbar-expand-xs navbar-light">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
               <img src="/green-apron-club-logo.png" alt="logo" />
@@ -177,6 +177,32 @@ class NavBar extends Component {
                 <div className="dash-box">
                   <div className="content-box">
                     <NavLink to="/signup" className="link-button" activeClassName="activeSecondary">
+                      <div>
+                        <h4>signup</h4>
+                      </div>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="d-block d-sm-none">
+            <div className="row no-gutters">
+              <div className="col-6">
+                <div className="dash-box">
+                  <div className="content-box">
+                    <NavLink to="/login" className="link-button" activeClassName="activePrimaryMobile">
+                      <div>
+                        <h4>login</h4>
+                      </div>
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="dash-box">
+                  <div className="content-box">
+                    <NavLink to="/signup" className="link-button" activeClassName="activeSecondaryMobile">
                       <div>
                         <h4>signup</h4>
                       </div>
