@@ -16,7 +16,7 @@ class Login extends Component {
 
   renderEmailField(field) {
     return (
-    <div>
+    <div className="form-group">
       <div className="input-group">
         <div className="input-group-prepend">
           <div className="input-group-text">
@@ -34,7 +34,7 @@ class Login extends Component {
 
   renderPasswordField(field) {
     return (
-      <div>
+      <div className="form-group">
         <div className="input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">

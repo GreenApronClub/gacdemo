@@ -127,7 +127,7 @@ span #companyName {color: #27ae60;}
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: .1em;
-  width: 10%;
+  width: 100%;
   background: #fff;
   color: #555;
   -webkit-transition: all 0.5s ease;

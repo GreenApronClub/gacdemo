@@ -21,7 +21,7 @@ let store = createStore(reducers, applyMiddleware(thunk));
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
+      <div className="main-div">
         <NavBar />
         <Route exact path="/login" render={() => (
           sessionStorage.getItem('jwt') ? (

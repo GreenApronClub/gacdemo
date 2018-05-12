@@ -128,7 +128,7 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarContent">
               <div className="container nav-content">
                 <div className="row no-gutters">
-                  <div className="col-md-4">
+                  <div className="col-sm-4">
                     <button className="nav-button nav-button-orders" data-toggle="collapse" data-target="#navbarContent">
                       <div>
                         <i className="ion-ios-home nav-icons"></i>
@@ -136,7 +136,7 @@ class NavBar extends Component {
                       </div>
                     </button>
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-sm-4">
                     <NavLink to="/login">
                       <button className="nav-button nav-button-login" data-toggle="collapse" data-target="#navbarContent">
                         <div>
@@ -146,7 +146,7 @@ class NavBar extends Component {
                       </button>
                     </NavLink>
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-sm-4">
                     <NavLink to="/signup">
                       <button className="nav-button nav-button-signup" data-toggle="collapse" data-target="#navbarContent">
                         <div>
@@ -160,9 +160,9 @@ class NavBar extends Component {
               </div>
             </div>
           </nav>
-          <div className="container">
+          <div className="container d-none d-sm-block">
             <div className="row no-gutters">
-              <div className="col-md-6">
+              <div className="col-6">
                 <div className="dash-box">
                   <div className="content-box">
                     <NavLink to="/login" className="link-button" activeClassName="activePrimary">
@@ -173,7 +173,7 @@ class NavBar extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-6">
                 <div className="dash-box">
                   <div className="content-box">
                     <NavLink to="/signup" className="link-button" activeClassName="activeSecondary">
