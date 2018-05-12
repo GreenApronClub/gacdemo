@@ -1,0 +1,22 @@
+@media only screen and (max-width: 576px) {
+  /*/ ----------------------------------------------------------- /*/
+  /*/ -------------------- STRAIN DETAILS ----------------------- /*/
+  /*/ ----------------------------------------------------------- /*/
+
+  .manage-box h4{
+    font-size: 75% !important;
+  }
+
+  .strain-description,
+  .strain-type {
+    font-size: 60% !important;
+  }
+
+  .custom-success-alert p {
+    font-size: 75% !important;
+  }
+
+  .custom-success-close-button {
+    font-size: 100% !important;
+  }
+}

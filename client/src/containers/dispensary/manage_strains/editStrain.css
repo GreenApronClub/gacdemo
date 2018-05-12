@@ -28,7 +28,7 @@
 
 .more-details .form-control {
   color: #390e0e;
-  font-size: 100% !important;
+  font-size: 100%;
 }
 
 .title .form-control {
@@ -46,7 +46,7 @@
 }
 
 .strain-field {
-  width: 250px !important;
+  max-width: 250px !important;
 }
 
 .price .form-control {
@@ -59,7 +59,7 @@
 
 .edit-strain select {
   font-size: 1rem;
-  width: 100px;
+  max-width: 100px;
   padding: 0.375rem 0.375rem;
   border: 0;
   border-bottom: 1px solid #390e0e;
@@ -172,7 +172,7 @@
 }
 
 .edit-strain .price-input {
-  width: 80px;
+  max-width: 80px;
 }
 
 .plan-details i {

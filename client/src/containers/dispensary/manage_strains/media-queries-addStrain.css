@@ -8,4 +8,12 @@
     margin-right: 0 !important;
   }
 
+  .custom-alert p {
+    font-size: 75% !important;
+  }
+
+  .custom-close {
+    font-size: 100% !important;
+  }
+
 }

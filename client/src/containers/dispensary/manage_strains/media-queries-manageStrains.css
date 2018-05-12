@@ -11,4 +11,15 @@
     font-size: 75% !important;
     padding: .1rem .75rem;
   }
+
+  .custom-alert p,
+  .custom-success-alert p {
+    font-size: 75% !important;
+  }
+
+  .manage-strains .custom-close,
+  .manage-strains .custom-success-close-button {
+    font-size: 100% !important;
+  }
+
 }

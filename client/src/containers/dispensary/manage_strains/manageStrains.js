@@ -34,7 +34,7 @@ class ManageStrains extends Component {
   renderStrainList() {
     return _.map(this.props.strains, strain => {
       return (
-          <div className="col-md-4 p-4" key={strain._id}>
+          <div className="col-12 col-md-4 p-4" key={strain._id}>
             <div className="content-box">
               <div className="title">
                 <h3>{strain.name}</h3>

@@ -6,6 +6,7 @@ import { removeStrain } from '../../../actions/manage_strains/actionRemoveStrain
 import { clearRemoveMessage } from '../../../actions/manage_strains/actionEditStrain';
 import classNames from 'classnames';
 import './manageStrain.css';
+import './media-query-manageStrain.css';
 
 class ManageStrain extends Component {
   componentWillMount() {

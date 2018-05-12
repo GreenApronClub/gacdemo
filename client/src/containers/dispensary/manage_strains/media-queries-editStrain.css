@@ -1,0 +1,18 @@
+@media only screen and (max-width: 576px) {
+  /*/ ----------------------------------------------------------- /*/
+  /*/ -------------------- STRAIN DETAILS ----------------------- /*/
+  /*/ ----------------------------------------------------------- /*/
+
+  .edit-box h4{
+    font-size: 75% !important;
+  }
+
+  .edit-strain .custom-file {
+    max-width: 340px !important;
+  }
+
+  .custom-file-label {
+    padding-right: 70px !important;
+  }
+
+}

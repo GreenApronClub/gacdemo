@@ -7,6 +7,7 @@ import { clearUpload } from '../../../actions/manage_strains/actionAddStrain';
 import { connect } from 'react-redux';
 import { fetchStrain } from '../../../actions/strain/actionStrain';
 import './editStrain.css';
+import './media-queries-editStrain.css';
 
 class EditStrain extends Component {
   componentDidMount() {
@@ -106,7 +107,7 @@ class EditStrain extends Component {
       <div className="edit-strain">
         <div className="container edit-box">
           <div className="row no-gutters">
-            <div className="col-md-5 m-4">
+            <div className="col-12 col-md-5 m-4">
               <div className="more-details">
                 <h4>Description: <i className="ion-edit edit-icons"></i></h4>
                 <Field label="Description" name="description" component={this.renderDescriptionField} />
@@ -114,7 +115,7 @@ class EditStrain extends Component {
                 <Field label="Type" name="type" component={this.renderTypeField} />
               </div>
             </div>
-            <div className="col-md-5 m-4">
+            <div className="col-md-5 m-4 mobile-viewport">
               <form className="edit-strain-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <div className="detail-box">
                   <div className="title">
