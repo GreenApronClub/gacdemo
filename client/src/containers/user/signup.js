@@ -36,48 +36,6 @@ class SignUp extends Component {
         {...field.input} />
     );
   }
-  renderAddressField(field) {
-    return (
-      <input className="form-control"
-        type="text" maxLength="62" placeholder="Address"
-        {...field.input} />
-    );
-  }
-  renderAddress2Field(field) {
-    return (
-      <input className="form-control"
-        type="text" maxLength="62" placeholder="Address 2"
-        {...field.input} />
-    );
-  }
-  renderPhonenumberField(field) {
-    return (
-      <input className="form-control"
-        type="number" maxLength="62" placeholder="Phone number"
-        {...field.input} />
-    );
-  }
-  renderCountryField(field) {
-    return (
-      <input className="form-control"
-        type="text" maxLength="62" placeholder="Country"
-        {...field.input} />
-    );
-  }
-  renderCityField(field) {
-    return (
-      <input className="form-control"
-        type="text" maxLength="62"  placeholder="City"
-        {...field.input} />
-    );
-  }
-  renderZipcodeField(field) {
-    return (
-      <input className="form-control"
-        type="text" maxLength="62" placeholder="Zip code"
-        {...field.input} />
-    );
-  }
   renderAgeVerificationCheckField(field) {
     return (
       <div className="form-check">
@@ -160,72 +118,6 @@ class SignUp extends Component {
                     </div>
                   </div>
                   <Field name="password" component={this.renderPasswordField} />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="ion-home"></i>
-                    </div>
-                  </div>
-                  <Field name="address" component={this.renderAddressField} />
-                </div>
-              </div>
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="ion-home"></i>
-                    </div>
-                  </div>
-                  <Field name="address 2" component={this.renderAddress2Field} />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      #
-                    </div>
-                  </div>
-                  <Field name="Phonenumber" component={this.renderPhonenumberField} />
-                </div>
-              </div>
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="ion-map"></i>
-                    </div>
-                  </div>
-                  <Field name="Country" component={this.renderCountryField} />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="ion-map"></i>
-                    </div>
-                  </div>
-                  <Field name="City" component={this.renderCityField} />
-                </div>
-              </div>
-              <div className="col-sm-6 form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="ion-map"></i>
-                    </div>
-                  </div>
-                  <Field name="Zipcode" component={this.renderZipcodeField} />
                 </div>
               </div>
             </div>

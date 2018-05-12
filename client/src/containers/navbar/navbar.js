@@ -127,7 +127,7 @@ class NavBar extends Component {
             </button>
 
             <div className="collapse navbar-collapse" id="navbarContent">
-              <div className="container nav-content">
+              <div className="nav-content">
                 <div className="row no-gutters">
                   <div className="col-4">
                     <button className="nav-button nav-button-orders" data-toggle="collapse" data-target="#navbarContent">
