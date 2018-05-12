@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import requestSignUp from '../../helpers/requestSignUp.js';
 import { signUpSuccess, signUpError, clearSignUpErrorMessage } from '../../actions/sign_up/actionSignUp.js';
 import './signup.css';
+import './media-queries-signup.css';
 
 class SignUp extends Component {
   renderFirstnameField(field) {
@@ -229,7 +230,7 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row justify-content-center">
-              <div className="col-sm-4 ml-5">
+              <div className="col-sm-4 ml-3">
                 <div className="input-group">
                     <Field name="ageverification" component={this.renderAgeVerificationCheckField} />
                 </div>

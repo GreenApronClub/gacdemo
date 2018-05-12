@@ -3,15 +3,13 @@
   /*/ ---------------------- FORM LOGIN ------------------------- /*/
   /*/ ----------------------------------------------------------- /*/
 
-  .form-control {
-    font-size: 60% !important;
+  .form-control,
+  .login-button {
+    font-size: 75% !important;
   }
 
   .login-form {
     max-width: 350px !important;
   }
-
-  .login-button {
-    font-size: 60% !important;
-  }
+  
 }

@@ -80,37 +80,37 @@ span #companyName {color: #27ae60;}
   font-size: 100%;
 }
 
-.nav-button-orders:hover, .nav-button-orders:focus {
+.nav-button-orders:hover, .nav-button-orders {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-manage:hover, .nav-button-manage:focus {
+.nav-button-manage:hover, .nav-button-manage {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-add:hover, .nav-button-add:focus {
+.nav-button-add:hover, .nav-button-add {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-logout:hover, .nav-button-logout:focus {
+.nav-button-logout:hover, .nav-button-logout {
   color: #fff;
   background: #700;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-login:hover, .nav-button-login:focus {
+.nav-button-login:hover, .nav-button-login {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-signup:hover, .nav-button-signup:focus {
+.nav-button-signup:hover, .nav-button-signup {
   color: #fff;
   background: #007500;
   box-shadow: 0 2px 5px 2px #e3e3e3;

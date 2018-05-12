@@ -25,7 +25,7 @@ class Login extends Component {
           </div>
         </div>
         <input id="email-input" className="form-control"
-          type="text"
+          type="email"
           maxLength="62" required placeholder="Email"
           {...field.input} />
       </div>
