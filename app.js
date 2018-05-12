@@ -46,17 +46,6 @@ app.use((req, res, next) => {
 console.log("INITIALIZING PASSPORT...");
 app.use(passport.initialize());
 
-
-// Routes
-app.get('/', (req, res) => {
-  res.render('home');
-});
-app.get('/signup', (req, res) => {
-  res.render('signup');
-});
-app.get('/login', (req, res) => {
-  res.render('login');
-});
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
 app.use('/manage/strains', manageRoutes);
