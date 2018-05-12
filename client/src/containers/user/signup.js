@@ -124,7 +124,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-person"></i>
+                      <i className="ion-person"></i>
                     </div>
                   </div>
                   <Field name="firstname" component={this.renderFirstnameField} />
@@ -134,7 +134,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-person"></i>
+                      <i className="ion-person"></i>
                     </div>
                   </div>
                   <Field name="lastname" component={this.renderLastnameField} />
@@ -146,7 +146,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-mail"></i>
+                      <i className="ion-email"></i>
                     </div>
                   </div>
                   <Field name="email" component={this.renderEmailField} />
@@ -156,7 +156,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-lock"></i>
+                      <i className="ion-locked"></i>
                     </div>
                   </div>
                   <Field name="password" component={this.renderPasswordField} />
@@ -168,7 +168,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-home"></i>
+                      <i className="ion-home"></i>
                     </div>
                   </div>
                   <Field name="address" component={this.renderAddressField} />
@@ -178,7 +178,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-home"></i>
+                      <i className="ion-home"></i>
                     </div>
                   </div>
                   <Field name="address 2" component={this.renderAddress2Field} />
@@ -200,7 +200,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-map"></i>
+                      <i className="ion-map"></i>
                     </div>
                   </div>
                   <Field name="Country" component={this.renderCountryField} />
@@ -212,7 +212,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-map"></i>
+                      <i className="ion-map"></i>
                     </div>
                   </div>
                   <Field name="City" component={this.renderCityField} />
@@ -222,7 +222,7 @@ class SignUp extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-md-map"></i>
+                      <i className="ion-map"></i>
                     </div>
                   </div>
                   <Field name="Zipcode" component={this.renderZipcodeField} />

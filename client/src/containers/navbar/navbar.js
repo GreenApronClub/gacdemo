@@ -37,7 +37,7 @@ class NavBar extends Component {
                     <button className="nav-button nav-button-orders" data-toggle="collapse" data-target="#navbarContent">
                       <div>
                         <i className="ion-ios-home nav-icons"></i>
-                        <h5 className="nav-title">Home</h5>
+                        <span className="nav-title">Home</span>
                       </div>
                     </button>
                   </div>
@@ -46,7 +46,7 @@ class NavBar extends Component {
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-ios-box nav-icons"></i>
-                          <h5 className="nav-title">Active orders</h5>
+                          <span className="nav-title">Active orders</span>
                         </div>
                       </button>
                     </NavLink>
@@ -56,7 +56,7 @@ class NavBar extends Component {
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-leaf nav-icons"></i>
-                          <h5 className="nav-title">Manage strains</h5>
+                          <span className="nav-title">Manage strains</span>
                         </div>
                       </button>
                     </NavLink>
@@ -66,7 +66,7 @@ class NavBar extends Component {
                       <button className="nav-button nav-button-manage" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-plus nav-icons"></i>
-                          <h5 className="nav-title">Add strain</h5>
+                          <span className="nav-title">Add strain</span>
                         </div>
                       </button>
                     </NavLink>
@@ -75,7 +75,7 @@ class NavBar extends Component {
                     <button className="nav-button nav-button-logout" data-toggle="collapse" data-target="#navbarContent" onClick={() => this.props.logOut(this.props)}>
                       <div>
                         <i className="ion-log-out nav-icons"></i>
-                        <h5 className="nav-title">Logout</h5>
+                        <span className="nav-title">Logout</span>
                       </div>
                     </button>
                   </div>
@@ -129,30 +129,30 @@ class NavBar extends Component {
             <div className="collapse navbar-collapse" id="navbarContent">
               <div className="container nav-content">
                 <div className="row no-gutters">
-                  <div className="col-sm-4">
+                  <div className="col-4">
                     <button className="nav-button nav-button-orders" data-toggle="collapse" data-target="#navbarContent">
                       <div>
                         <i className="ion-ios-home nav-icons"></i>
-                        <h5 className="nav-title">Home</h5>
+                        <span className="nav-title">Home</span>
                       </div>
                     </button>
                   </div>
-                  <div className="col-sm-4">
+                  <div className="col-4">
                     <NavLink to="/login">
                       <button className="nav-button nav-button-login" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-log-in nav-icons"></i>
-                          <h5 className="nav-title">Login</h5>
+                          <span className="nav-title">Login</span>
                         </div>
                       </button>
                     </NavLink>
                   </div>
-                  <div className="col-sm-4">
+                  <div className="col-4">
                     <NavLink to="/signup">
                       <button className="nav-button nav-button-signup" data-toggle="collapse" data-target="#navbarContent">
                         <div>
                           <i className="ion-log-in nav-icons"></i>
-                          <h5 className="nav-title">Signup</h5>
+                          <span className="nav-title">Signup</span>
                         </div>
                       </button>
                     </NavLink>

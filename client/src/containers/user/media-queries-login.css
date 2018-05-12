@@ -4,12 +4,17 @@
   /*/ ----------------------------------------------------------- /*/
 
   .form-control,
-  .login-button {
+  .login-button,
+  .validation-alert {
     font-size: 75% !important;
   }
 
   .login-form {
     max-width: 350px !important;
   }
-  
+
+  .validation-alert {
+    margin-left: 15px !important;
+  }
+
 }

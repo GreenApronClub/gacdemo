@@ -38,6 +38,9 @@ img {
 .nav-title {
   border-top: 1px solid #555;
   padding-top: 12px;
+  font-size: 200%;
+  font-weight: 400;
+  display: block;
 }
 
 .logo-small {
@@ -80,37 +83,37 @@ span #companyName {color: #27ae60;}
   font-size: 100%;
 }
 
-.nav-button-orders:hover, .nav-button-orders {
+.nav-button-orders:hover {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-manage:hover, .nav-button-manage {
+.nav-button-manage:hover {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-add:hover, .nav-button-add {
+.nav-button-add:hover {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-logout:hover, .nav-button-logout {
+.nav-button-logout:hover {
   color: #fff;
   background: #700;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-login:hover, .nav-button-login {
+.nav-button-login:hover {
   color: #390e0e;
   background: #fff;
   box-shadow: 0 2px 5px 2px #e3e3e3;
 }
 
-.nav-button-signup:hover, .nav-button-signup {
+.nav-button-signup:hover {
   color: #fff;
   background: #007500;
   box-shadow: 0 2px 5px 2px #e3e3e3;

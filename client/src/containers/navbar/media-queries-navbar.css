@@ -1,4 +1,9 @@
 @media only screen and (max-width: 576px) {
+  .nav-content {
+    margin-top: 20px;
+    margin-bottom: 60px !important;
+  }
+
   .navbar-light .navbar-toggler {
     border-color: #fff !important;
     font-size: 70% !important;
@@ -12,7 +17,7 @@
   }
 
   .secondary-nav-title {
-    font-size: 60% !important;
+    font-size: 70% !important;
   }
 
   .link-button:hover {
@@ -26,5 +31,9 @@
   .drop-down {
     cursor: pointer;
     font-size: 87% !important;
+  }
+
+  .drop-button:hover {
+    box-shadow: none;
   }
 }

@@ -21,7 +21,7 @@ class Login extends Component {
       <div className="input-group">
         <div className="input-group-prepend">
           <div className="input-group-text">
-            <i className="ion-ios-email-outline"></i>
+            <i className="ion-email"></i>
           </div>
         </div>
         <input id="email-input" className="form-control"
@@ -39,7 +39,7 @@ class Login extends Component {
         <div className="input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">
-              <i className="ion-ios-locked-outline"></i>
+              <i className="ion-locked"></i>
             </div>
           </div>
           <input className="form-control"
