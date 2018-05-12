@@ -7,6 +7,7 @@ import { clearMessage } from '../../actions/clear/clearAlert';
 import { requestLogin } from '../../actions/login/actionLogin';
 import * as types from '../../actions/actionTypes';
 import './login.css';
+import './media-queries-login.css';
 
 class Login extends Component {
   componentWillUnmount() {

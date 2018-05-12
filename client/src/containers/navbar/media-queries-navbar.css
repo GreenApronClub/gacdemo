@@ -1,0 +1,26 @@
+@media only screen and (max-width: 576px) {
+  .navbar-light .navbar-toggler {
+    border-color: #fff !important;
+    font-size: 70% !important;
+    cursor: pointer !important;
+    width: 100% !important;
+  }
+
+  img {
+    height: 60px !important;
+    width: auto !important;
+  }
+
+  .secondary-nav-title {
+    font-size: 60% !important;
+  }
+
+/*/ ------------------------------------------------------ /*/
+/*/ -------------------- DROP DOWN ----------------------- /*/
+/*/ ------------------------------------------------------ /*/
+
+  .drop-down {
+    cursor: pointer;
+    font-size: 87% !important;
+  }
+}

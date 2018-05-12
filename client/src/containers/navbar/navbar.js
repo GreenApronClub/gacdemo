@@ -7,6 +7,7 @@ import { checkUser } from '../../actions/user/actionSession';
 import { bindActionCreators } from 'redux';
 // import { getNavData } from './handler_navbar';
 import './navbar.css';
+import './media-queries-navbar.css';
 
 class NavBar extends Component {
   componentDidMount() {
@@ -192,9 +193,7 @@ class NavBar extends Component {
                 <div className="dash-box">
                   <div className="content-box">
                     <NavLink to="/login" className="link-button" activeClassName="activePrimaryMobile">
-                      <div>
-                        <h4>login</h4>
-                      </div>
+                        <span className="secondary-nav-title">login</span>
                     </NavLink>
                   </div>
                 </div>
@@ -203,9 +202,7 @@ class NavBar extends Component {
                 <div className="dash-box">
                   <div className="content-box">
                     <NavLink to="/signup" className="link-button" activeClassName="activeSecondaryMobile">
-                      <div>
-                        <h4>signup</h4>
-                      </div>
+                        <span className="secondary-nav-title">signup</span>
                     </NavLink>
                   </div>
                 </div>

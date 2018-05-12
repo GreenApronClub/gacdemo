@@ -1,0 +1,17 @@
+@media only screen and (max-width: 576px) {
+  /*/ ----------------------------------------------------------- /*/
+  /*/ ---------------------- FORM LOGIN ------------------------- /*/
+  /*/ ----------------------------------------------------------- /*/
+
+  .form-control {
+    font-size: 60% !important;
+  }
+
+  .login-form {
+    max-width: 350px !important;
+  }
+
+  .login-button {
+    font-size: 60% !important;
+  }
+}

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
-
-const ROOT_URL = "http://localhost:8080";
+import { ROOT_URL } from '../../config/constants';
 
 export function fetchStrain(params, upload) {
   const request = axios.get(`${ROOT_URL}/manage/strains/` + params, { headers: { 'Authorization': sessionStorage.getItem('jwt')}});
