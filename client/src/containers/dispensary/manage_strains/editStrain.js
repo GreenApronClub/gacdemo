@@ -107,7 +107,7 @@ class EditStrain extends Component {
       <div className="edit-strain">
         <div className="container edit-box">
           <div className="row no-gutters">
-            <div className="col-12 col-md-5 m-4">
+            <div className="col-md-5 m-4">
               <div className="more-details">
                 <h4>Description: <i className="ion-edit edit-icons"></i></h4>
                 <Field label="Description" name="description" component={this.renderDescriptionField} />
