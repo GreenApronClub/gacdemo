@@ -25,10 +25,6 @@ mongoose.connect(configDb.url) // Uses specified url to connect to mongodb
 .catch((err) => console.log(err));
 
 
-
-// Template config
-app.set("view engine", "ejs");
-
 app.use(express.static("public")); // Css/js resources
 app.use(express.static("uploads"));
 app.use(morgan('dev'));
@@ -67,8 +63,20 @@ app.use('/manage/strains', manageRoutes);
 app.use('/shop/strains', strainRoutes);
 app.use('/cart', cartRoutes);
 app.use('/user', userRoutes);
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up production assets
+  // Like main.js or main.css
+  app.use(express.static('client/build'));
+
+  // Express will serve up index.html file
+  // If server does not recongnize route
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 app.use((req, res, next) => {
-  const error = new Error('Page not really found');
+  const error = new Error('Page unavailable');
   error.status = 404;
   next(error);
 });

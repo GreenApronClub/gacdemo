@@ -19,7 +19,7 @@ exports.login_user = (req, res, next) => {
     sanitizedLoginData[key] = DOMPurify.sanitize(loginData[key]);
   }
   var validatedLogin = loginValidation.validate(
-    sanitizedLoginData.email,
+    sanitizedLoginData.email.toLowerCase(),
     sanitizedLoginData.password
   );
   var validatedLoginData = loginValidation.validatedLoginData;

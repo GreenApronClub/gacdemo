@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
+import { ROOT_URL } from '../../config/constants.js';
 
-const ROOT_URL = "http://localhost:8080";
 export var IsLoggedIn = false;
 
 export function requestLogin(values, props) {

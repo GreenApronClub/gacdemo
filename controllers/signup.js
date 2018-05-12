@@ -35,7 +35,7 @@ exports.register_user = (req, res, next) => {
     var validatedSignupData = signupValidation.validatedSignupData;
     if (validatedSignup === true) {
       var newUser = new User({
-        email: validatedSignupData.email,
+        email: validatedSignupData.email.toLowerCase(),
         password: validatedSignupData.password,
         first_name: validatedSignupData.firstName,
         last_name: validatedSignupData.lastName,

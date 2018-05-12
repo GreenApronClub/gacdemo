@@ -1,6 +1,8 @@
 export const LOG_OUT = 'log_out';
 export const LOGIN_ERROR = 'login_error';
 export const IS_LOGGED_IN = 'is_logged_in';
+export const SIGN_UP_SUCCESS = 'sign_up_success';
+export const SIGN_UP_ERROR = 'sign_up_error';
 export const FETCH_STRAIN_LIST = 'fetch_strain_list';
 export const FETCH_STRAIN_LIST_ERROR = 'fetch_strain_list_error';
 export const FETCH_STRAIN = 'fetch_strain';

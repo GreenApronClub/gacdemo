@@ -1,5 +1,5 @@
 import {  combineReducers } from 'redux';
-import SignupReducer from './reducer_signup';
+import SignUpReducer from './sign_up/reducerSignUp';
 import SessionReducer from './login/session';
 import StrainsReducer from './strains/reducerStrains';
 import StrainReducer from './strains/reducerStrain';
@@ -12,7 +12,7 @@ import ImageUploadReducer from './upload/reducerImageUpload';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
-  userData: SignupReducer,
+  signUp: SignUpReducer,
   session: SessionReducer,
   route: NavigationReducer,
   strainList: StrainsReducer,

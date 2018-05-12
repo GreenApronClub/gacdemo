@@ -15,6 +15,10 @@ export default {
     errorMessage: null,
     strain: null
   },
+  signUp: {
+    success: {},
+    error: {}
+  },
   addStrain: {
     success: {},
     error: {}

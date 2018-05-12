@@ -3,10 +3,17 @@ import { Field, reduxForm } from 'redux-form';
 import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
+import { clearMessage } from '../../actions/clear/clearAlert';
 import { requestLogin } from '../../actions/login/actionLogin';
+import * as types from '../../actions/actionTypes';
 import './login.css';
 
 class Login extends Component {
+  componentWillUnmount() {
+    const errorMessage = '';
+    this.props.clearMessage(errorMessage, types.LOGIN_ERROR)
+  }
+
   renderEmailField(field) {
     return (
     <div>
@@ -88,5 +95,5 @@ export default withRouter(reduxForm({
   validate,
   form: 'LoginForm'
 })(
-  connect(mapStateToProps, { requestLogin })(Login)
+  connect(mapStateToProps, { requestLogin, clearMessage })(Login)
 ));

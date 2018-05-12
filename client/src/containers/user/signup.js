@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import requestSignUp from '../../helpers/requestSignUp.js';
+import { signUpSuccess, signUpError, clearSignUpErrorMessage } from '../../actions/sign_up/actionSignUp.js';
 import './signup.css';
 
 class SignUp extends Component {
@@ -73,14 +77,40 @@ class SignUp extends Component {
         {...field.input} />
     );
   }
+  renderAgeVerificationCheckField(field) {
+    return (
+      <div className="form-check">
+        <label className="form-check-label age-verification" htmlFor="age-checkbox">
+        <input id="age-checkbox" className="form-check-input" type="checkbox" {...field.input} />
+          I am 21 years of age or older
+        </label>
+      </div>
+    );
+  }
+
+  onSubmit(values) {
+    var history = this.props.history;
+    requestSignUp(values)
+      .then(response => {
+        if(response.data) {
+          this.props.signUpSuccess(response.data.success);
+          history.push('/login');
+        }
+      })
+      .catch(error => {
+        if(error.response.data)
+          this.props.signUpError(error.response.data.error);
+      })
+  }
 
   render() {
+    const { handleSubmit } = this.props;
     return(
       <div className="form-container">
-        <form className="signup-form">
+        <form className="signup-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <div className="container">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-sm-12">
                 <div variant="info">
                   <div className="left"></div>
                 </div>
@@ -89,21 +119,21 @@ class SignUp extends Component {
           </div>
             <div className="container alert-box">
             <div className="row">
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-person-outline"></i>
+                      <i className="ion-md-person"></i>
                     </div>
                   </div>
                   <Field name="firstname" component={this.renderFirstnameField} />
                 </div>
               </div>
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-person-outline"></i>
+                      <i className="ion-md-person"></i>
                     </div>
                   </div>
                   <Field name="lastname" component={this.renderLastnameField} />
@@ -111,21 +141,21 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-email-outline"></i>
+                      <i className="ion-md-mail"></i>
                     </div>
                   </div>
                   <Field name="email" component={this.renderEmailField} />
                 </div>
               </div>
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-locked-outline"></i>
+                      <i className="ion-md-lock"></i>
                     </div>
                   </div>
                   <Field name="password" component={this.renderPasswordField} />
@@ -133,21 +163,21 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-home-outline"></i>
+                      <i className="ion-md-home"></i>
                     </div>
                   </div>
                   <Field name="address" component={this.renderAddressField} />
                 </div>
               </div>
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-ios-home-outline"></i>
+                      <i className="ion-md-home"></i>
                     </div>
                   </div>
                   <Field name="address 2" component={this.renderAddress2Field} />
@@ -155,7 +185,7 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
@@ -165,11 +195,11 @@ class SignUp extends Component {
                   <Field name="Phonenumber" component={this.renderPhonenumberField} />
                 </div>
               </div>
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-map"></i>
+                      <i className="ion-md-map"></i>
                     </div>
                   </div>
                   <Field name="Country" component={this.renderCountryField} />
@@ -177,21 +207,21 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-map"></i>
+                      <i className="ion-md-map"></i>
                     </div>
                   </div>
                   <Field name="City" component={this.renderCityField} />
                 </div>
               </div>
-              <div className="col-md-6 form-group">
+              <div className="col-sm-6 form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="ion-map"></i>
+                      <i className="ion-md-map"></i>
                     </div>
                   </div>
                   <Field name="Zipcode" component={this.renderZipcodeField} />
@@ -199,14 +229,9 @@ class SignUp extends Component {
               </div>
             </div>
             <div className="row justify-content-center">
-              <div className="col-md-4 ml-5">
+              <div className="col-sm-4 ml-5">
                 <div className="input-group">
-                  <div className="form-check">
-                    <label className="form-check-label age-verification" htmlFor="age-checkbox">
-                    <input id="age-checkbox" className="form-check-input" type="checkbox" value="" />
-                      I am 21 years of age or older
-                    </label>
-                  </div>
+                    <Field name="ageverification" component={this.renderAgeVerificationCheckField} />
                 </div>
               </div>
             </div>
@@ -230,7 +255,20 @@ function validate(values) {
   return errors;
 }
 
-export default reduxForm({
+function mapStateToProps(state) {
+  return {
+    signUpErrorData: state.signUp.error
+  };
+}
+
+SignUp = withRouter(reduxForm({
   validate,
-  form: 'SignUpForm'
-})(SignUp);
+  form: 'SignUpForm',
+})(SignUp));
+
+SignUp = connect(mapStateToProps, {
+  signUpSuccess,
+  signUpError,
+  clearSignUpErrorMessage })(SignUp);
+
+export default SignUp;
