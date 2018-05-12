@@ -33,13 +33,19 @@ img {
   font-size: 100%;
 }
 
-.nav-icons {font-size: 200%;}
+.nav-icons {font-size: 400%;}
 
 .nav-title {
   border-top: 1px solid #555;
   padding-top: 12px;
   font-size: 200%;
   font-weight: 400;
+  display: block;
+}
+
+.nav-title-logged-in {
+  border-top: 1px solid #555;
+  padding-top: 12px;
   display: block;
 }
 

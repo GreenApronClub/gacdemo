@@ -8,6 +8,7 @@ import { selectedImage } from '../../../actions/upload/actionImageUpload';
 import classNames from 'classnames';
 import * as types from '../../../actions/actionTypes';
 import './addStrain.css';
+import './media-queries-addStrain.css';
 
 class AddStrain extends Component {
   componentWillUnmount() {
@@ -118,7 +119,11 @@ class AddStrain extends Component {
           </div>
           <Field label="Image" name="strainImage" component={this.renderFileField.bind(this)} />
           <p className="accepted-formats">Please use jpeg/png formats only</p>
-          <img className="image-preview" src={this.props.imageSource} alt="" />
+          <div className="row">
+            <div className="col-12">
+              <img className="image-preview" src={this.props.imageSource} alt="" />
+            </div>
+          </div>
           <div className="mt-3">Selected image: {this.props.imageName}</div>
           <div className="button-form">
             <button className="add-strain-button" type="submit">Add</button>

@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { fetchStrains, searchStrain, clearMessage } from '../../../actions/strain_list/actionStrainList';
 import { clearRemoveMessage } from '../../../actions/manage_strains/actionRemoveStrain';
 import './manageStrains.css';
+import './media-queries-manageStrains.css';
 
 
 class ManageStrains extends Component {

@@ -4,7 +4,7 @@
 
 .search-form {
   margin: 30px auto 10px;
-  width: 350px;
+  max-width: 350px;
   padding-bottom: 10px;
   text-align: center;
 }

@@ -11,7 +11,7 @@
     width: 100% !important;
   }
 
-  img {
+  .navbar img {
     height: 55px !important;
     width: auto !important;
   }
@@ -22,6 +22,15 @@
 
   .link-button:hover {
     box-shadow: none;
+  }
+
+  .nav-icons {
+    font-size: 350% !important;
+  }
+
+  .nav-title-logged-in {
+    font-size: 130% !important;
+    font-weight: 400 !important;
   }
 
 /*/ ------------------------------------------------------ /*/

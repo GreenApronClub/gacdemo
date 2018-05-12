@@ -1,0 +1,14 @@
+@media only screen and (max-width: 576px) {
+  /*/ --------------------------------------------------- /*/
+  /*/ -------------------- SEARCH ---------------------- /*/
+  /*/ ------------------------------------------------- /*/
+
+  .search-form {
+    max-width: 300px !important;
+  }
+
+  .search-form .form-control {
+    font-size: 75% !important;
+    padding: .1rem .75rem;
+  }
+}
