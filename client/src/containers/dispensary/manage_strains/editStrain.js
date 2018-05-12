@@ -125,8 +125,8 @@ class EditStrain extends Component {
                     </div>
                   </div>
                   <p className="accepted-formats">Please use jpeg/png formats only</p>
-                  <div className="image-box">
-                    <img src={this.props.imageSource} alt="" />
+                  <div className="image-edit-preview-box">
+                    <img className="image-edit-preview" src={this.props.imageSource} alt="" />
                     <Field label="Image" name="strainImage" component={this.renderFileField.bind(this)} />
                   </div>
                   <div className="price">

@@ -15,4 +15,9 @@
     padding-right: 70px !important;
   }
 
+  .image-edit-preview {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
 }

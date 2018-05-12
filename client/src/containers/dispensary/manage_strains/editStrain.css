@@ -140,15 +140,15 @@
   box-shadow: 0 4px 10px 4px #e3e3e3;
 }
 
-.image-box img {
+.image-edit-preview-box {
+  overflow: hidden;
+  background-color: #000;
+}
+
+.image-edit-preview {
   opacity: 0.8;
   width: 100%;
   height: auto;
-}
-
-.image-box {
-  overflow: hidden;
-  background-color: #000;
 }
 
 .detail-box div {
