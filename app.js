@@ -45,6 +45,7 @@ app.use((req, res, next) => {
 // Passport config
 console.log("INITIALIZING PASSPORT...");
 app.use(passport.initialize());
+console.log("Current Port" + process.env.PORT);
 
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);

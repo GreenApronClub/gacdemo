@@ -10,7 +10,8 @@ const imageProc = require("../img_process/imageProcess");
 
 exports.add_strain = (req, res, next) => {
   imageProc.processImage(req.file.path);
-  var url = 'http://localhost:8080';
+  var url = `http://localhost:${process.env.PORT}`;
+  console.log(url);
   var imageUrl = url + req.file.path;
   var imagePath = imageUrl.replace("uploads\\", '/');
   var newstrainData = req.body;
