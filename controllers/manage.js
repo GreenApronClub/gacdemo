@@ -46,17 +46,8 @@ exports.add_strain = (req, res, next) => {
   const fileName = req.file.filename;
   const fileType = req.file.mimetype;
   const S3_BUCKET = process.env.S3_BUCKET;
-  const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
-  const AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
   const AWS_REGION = process.env.AWS_REGION;
-  console.log(AWS_ACCESS_KEY_ID);
-  console.log(AWS_SECRET_KEY);
-  console.log(AWS_REGION);
-  AWS.config.update({
-    accessKeyId: AWS_ACCESS_KEY_ID,
-    secretAccessKey: AWS_SECRET_KEY,
-    region: AWS_REGION
-  });
+  AWS.config.region = AWS_REGION;
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
