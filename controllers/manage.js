@@ -77,12 +77,13 @@ exports.add_strain = (req, res, next) => {
     cleanstrainData.price
   );
   var validatedstrainData = strainValidation.validatedstrainData;
+  var imageURL = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
   var newStrain = new strain({
     name: cleanstrainData.name.toLowerCase(),
     price: validatedstrainData.price,
     description: cleanstrainData.description,
     type: cleanstrainData.type
-    // image: imagePath
+    image: imagePath
   });
   newStrain.save(err => {
     if(err) {
