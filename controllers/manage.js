@@ -58,10 +58,10 @@ exports.add_strain = (req, res, next) => {
 
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if(err){
+      console.log("FATAL ERROR!!!!!");
       console.log(err);
       return res.end();
     }
-    console.log("PASSED")
     const returnData = {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
