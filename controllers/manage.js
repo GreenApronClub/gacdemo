@@ -83,7 +83,7 @@ exports.add_strain = (req, res, next) => {
     price: validatedstrainData.price,
     description: cleanstrainData.description,
     type: cleanstrainData.type,
-    image: imagePath
+    image: imageURL
   });
   newStrain.save(err => {
     if(err) {
