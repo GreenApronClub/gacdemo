@@ -42,6 +42,7 @@ const imageProc = require("../img_process/imageProcess");
 // }
 
 exports.add_strain = (req, res, next) => {
+  console.log(req.file);
   const s3 = new AWS.S3();
   const fileName = req.file.filename;
   const fileType = req.file.mimetype;
