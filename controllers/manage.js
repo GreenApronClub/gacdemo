@@ -6,9 +6,8 @@ const window = (new JSDOM('')).window;
 const DOMPurify = createDompurify(window);
 const validator = require("validator");
 const strain = require('../models/strain');
-const aws = require('aws-sdk');
+const AWS = require('aws-sdk');
 const imageProc = require("../img_process/imageProcess");
-aws.config.region = 'us-east-1';
 
 // exports.add_strain = (req, res, next) => {
 //   console.log(req.file);
@@ -43,11 +42,18 @@ aws.config.region = 'us-east-1';
 // }
 
 exports.add_strain = (req, res, next) => {
-
   const s3 = new aws.S3();
   const fileName = req.file.filename;
   const fileType = req.file.mimetype;
   const S3_BUCKET = process.env.S3_BUCKET;
+  const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+  const AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
+  const AWS_REGION = process.env.AWS_REGION;
+  AWS.config.update({
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_KEY,
+    region: AWS_REGION
+  });
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
