@@ -61,6 +61,7 @@ exports.add_strain = (req, res, next) => {
       console.log(err);
       return res.end();
     }
+    console.log("PASSED")
     const returnData = {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
