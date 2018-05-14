@@ -4,6 +4,7 @@
   "description": "Green Apron's Server File",
   "main": "app.js",
   "dependencies": {
+    "aws-sdk": "^2.238.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",

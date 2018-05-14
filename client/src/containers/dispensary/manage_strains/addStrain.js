@@ -74,6 +74,7 @@ class AddStrain extends Component {
         name={field.name}
         onChange={(image) => {
           var files = image.target.files;
+          console.log(files[0]);
           if(!files[0])
             return;
           field.input.onChange(files[0]);
