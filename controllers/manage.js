@@ -49,6 +49,9 @@ exports.add_strain = (req, res, next) => {
   const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
   const AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
   const AWS_REGION = process.env.AWS_REGION;
+  console.log(AWS_ACCESS_KEY_ID);
+  console.log(AWS_SECRET_KEY);
+  console.log(AWS_REGION);
   AWS.config.update({
     accessKeyId: AWS_ACCESS_KEY_ID,
     secretAccessKey: AWS_SECRET_KEY,
