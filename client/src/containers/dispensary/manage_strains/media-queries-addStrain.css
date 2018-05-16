@@ -16,4 +16,8 @@
     font-size: 100% !important;
   }
 
+  .price-input {
+    width: 90px !important;
+  }
+
 }

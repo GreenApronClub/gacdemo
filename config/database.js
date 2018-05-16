@@ -1,6 +1,16 @@
 //Connection to mongodb
-module.exports = {
-  'secret': 'wecalljaguartootbecauseheistheoneandtruekingtoot',
-  // 'url' : 'mongodb://localhost/green_apron_club'
-  'url': 'mongodb://gac-calvin:jaguarisawesome@ds119660.mlab.com:19660/gacdata'
-};
+require('dotenv').config();
+
+if(process.env.NODE_ENV === 'development') {
+  module.exports = {
+    'secret': process.env.JWT_SECRET,
+    'url' : process.env.DB_LOCAL_HOST
+  };
+}
+
+if(process.env.NODE_ENV === 'production') {
+  module.exports = {
+    'secret': process.env.JWT_SECRET,
+    'url': process.env.DB_HOST
+  };
+}

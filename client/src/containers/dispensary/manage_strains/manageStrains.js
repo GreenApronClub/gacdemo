@@ -13,6 +13,7 @@ import './media-queries-manageStrains.css';
 class ManageStrains extends Component {
   componentDidMount() {
     this.props.fetchStrains();
+    console.log("ENV: " + process.env.REACT_APP_ENV);
   }
   renderSearchField(field) {
     return (
@@ -32,6 +33,7 @@ class ManageStrains extends Component {
   }
 
   renderStrainList() {
+    console.log(this.props.strains)
     return _.map(this.props.strains, strain => {
       return (
           <div className="col-12 col-md-4 p-4" key={strain._id}>

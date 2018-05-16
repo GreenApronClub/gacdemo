@@ -21,7 +21,7 @@ const ErrorController = require('./controllers/error');
 // Mongoose config
 mongoose.Promise = global.Promise;
 mongoose.connect(configDb.url) // Uses specified url to connect to mongodb
-.then(() => console.log('MongoDb Connection Established: http://localhost:27017'))
+.then(() => console.log('MongoDb Connection Established:'))
 .catch((err) => console.log(err));
 
 
@@ -43,9 +43,10 @@ app.use((req, res, next) => {
 });
 
 // Passport config
-console.log("INITIALIZING PASSPORT...");
+
+console.log("PLATFORM MODE: " + process.env.NODE_ENV);
 app.use(passport.initialize());
-console.log("Current Port" + process.env.PORT);
+console.log("CURRENT PORT: " + process.env.PORT);
 
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);

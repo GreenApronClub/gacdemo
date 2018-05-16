@@ -44,30 +44,44 @@ const imageProc = require("../img_process/imageProcess");
 exports.add_strain = (req, res, next) => {
   console.log(req.file);
   const s3 = new AWS.S3();
-  const fileName = req.file.filename;
+  const fileName = req.file.originalname;
   const fileType = req.file.mimetype;
+  const fileData = req.file.buffer;
   const S3_BUCKET = process.env.S3_BUCKET;
   const AWS_REGION = process.env.AWS_REGION;
   AWS.config.region = AWS_REGION;
-  const s3Params = {
+  var params = {
     Bucket: S3_BUCKET,
     Key: fileName,
-    Expires: 60,
-    ContentType: fileType,
-    ACL: 'public-read'
+    Body: fileData
   };
-
-  s3.getSignedUrl('putObject', s3Params, (err, data) => {
-    if(err){
+  s3.upload(params, function (err, data) {
+    if (err) {
+      console.log('error in callback');
       console.log(err);
-      return res.end();
     }
-    const returnData = {
-      signedRequest: data,
-      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
-    };
-    res.write(JSON.stringify(returnData));
+    console.log('success');
+    console.log(data);
   });
+  // const s3Params = {
+  //   Bucket: S3_BUCKET,
+  //   Key: fileName,
+  //   Expires: 60,
+  //   ContentType: fileType,
+  //   ACL: 'public-read'
+  // };
+  // s3.getSignedUrl('putObject', s3Params, (err, data) => {
+  //   if(err){
+  //     console.log(err);
+  //     return res.end();
+  //   }
+  //   const returnData = {
+  //     signedRequest: data,
+  //     url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+  //   };
+  //   console.log(returnData)
+  //   res.write(JSON.stringify(returnData));
+  // });
   var newstrainData = req.body;
   var cleanstrainData = {};
   for(var key in newstrainData) {
@@ -96,7 +110,7 @@ exports.add_strain = (req, res, next) => {
 }
 
 exports.get_strains = (req, res) => {
-  var query = strain.find({}).select('name price _id');
+  var query = strain.find({}).select('name price image _id');
   query.exec(function(err, strains) {
     if(err) return err;
     console.log("FETCHING STRAINS...")

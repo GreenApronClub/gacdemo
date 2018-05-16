@@ -7,14 +7,14 @@ const ManageController = require('../../controllers/manage');
 const multer = require('multer');
 
 // const storage = multer.diskStorage({
-//   destination: function(req, file, cb) {
-//     cb(null, './uploads/');
-//   },
+//   // destination: function(req, file, cb) {
+//   //   cb(null, './uploads/');
+//   // },
 //   filename: function (req, file, cb) {
 //     cb(null, file.originalname);
 //   }
 // });
-//
+
 // const fileFilter = (req, file, cb) => {
 //   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
 //     cb(null, true);
@@ -22,18 +22,16 @@ const multer = require('multer');
 //     cb(new Error('Invalid image format. Please use jpeg or png formats'), false);
 //   }
 // }
-//
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//   fileSize: 1024 * 1024 * 5
-//   },
-//   fileFilter: fileFilter
-// });
+
+const upload = multer({
+  limits: {
+  fileSize: 1024 * 1024 * 5
+  }
+});
 
 router.get('/', ManageController.get_strains);
 router.post('/', ManageController.search_strain);
-router.post('/add', ManageController.add_strain);
+router.post('/add', upload.single('strainImage'), ManageController.add_strain);
 router.post('/:strainId', ManageController.search_strain);
 router.get('/:strainId', passport.authenticate('jwt', { session: false }), ManageController.get_specific_strain);
 router.put('/:strainId', ManageController.update_specific_strain);
