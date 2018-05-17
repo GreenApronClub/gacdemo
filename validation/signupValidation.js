@@ -4,7 +4,7 @@ var errorCode = '';
 
 exports.validatedSignupData = validatedSignupData;
 
-exports.validate = (email, firstName, lastName, password, address, address2, city, zipCode, phoneNumber, ageVerification) => {
+exports.validate = (email, firstName, lastName, password, ageVerification) => {
   if (validator.isEmail(email)) {
     validatedSignupData.email = email;
   } else {

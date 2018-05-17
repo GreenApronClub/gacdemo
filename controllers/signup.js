@@ -25,11 +25,6 @@ exports.register_user = (req, res, next) => {
       cleanSignupData.firstname,
       cleanSignupData.lastname,
       cleanSignupData.password,
-      cleanSignupData.address,
-      cleanSignupData.address2,
-      cleanSignupData.city,
-      cleanSignupData.zipcode,
-      cleanSignupData.phonenumber,
       cleanSignupData.ageverification
     );
     var validatedSignupData = signupValidation.validatedSignupData;
@@ -39,11 +34,6 @@ exports.register_user = (req, res, next) => {
         password: validatedSignupData.password,
         first_name: validatedSignupData.firstName,
         last_name: validatedSignupData.lastName,
-        address: validatedSignupData.address,
-        address2: validatedSignupData.address2,
-        city: validatedSignupData.city,
-        zip_code: validatedSignupData.zipCode,
-        phone_number: validatedSignupData.phoneNumber,
         age_verification: validatedSignupData.ageVerification
       });
       newUser.save(err => {
@@ -66,7 +56,7 @@ exports.register_user = (req, res, next) => {
             console.log(err)
             return res.json({success: false, msg: 'Validation error', error: err});
         } else {
-            res.json({status: 200, msg : 'You have been succesfully registered! Please proceed to login.'});
+            res.json({success: { message : 'You have been succesfully registered! Please login with your new credentials.'}});
         }
       });
     } else {

@@ -12,7 +12,9 @@ import './media-queries-login.css';
 class Login extends Component {
   componentWillUnmount() {
     const errorMessage = '';
+    const success = {success: {}};
     this.props.clearMessage(errorMessage, types.LOGIN_ERROR)
+    this.props.clearMessage(success, types.SIGN_UP_SUCCESS)
   }
 
   renderEmailField(field) {
@@ -56,13 +58,24 @@ class Login extends Component {
 
   render() {
     const { handleSubmit } = this.props;
+    const success = {success: {}};
     var passwordAlertClass = classNames({
       'validation-close': true,
       'validation-alert': this.props.errorMessage
     });
+    var customAlert = classNames({
+      'custom-alert': this.props.signUpSuccess.message,
+      'custom-alert-close': true
+    });
     return(
       <div className="form-content">
         <form className="login-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+          <div className={customAlert}>
+            <p>{this.props.signUpSuccess.message}</p>
+            <button type="button" className="custom-close" onClick={() => this.props.clearMessage(success, types.SIGN_UP_SUCCESS)}>
+              <span aria-hidden="true"><i className="ion-ios-checkmark"></i></span>
+            </button>
+          </div>
           <Field label="Email" name="email" component={this.renderEmailField} />
           <Field label="Password" name="password" component={this.renderPasswordField} />
           <div className={passwordAlertClass}><p>{this.props.errorMessage}</p></div>
@@ -89,7 +102,10 @@ function validate(values) {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.session.errorMessage, isLoggedIn: state.session.isLoggedIn };
+  return {
+    errorMessage: state.session.errorMessage,
+    isLoggedIn: state.session.isLoggedIn,
+    signUpSuccess: state.signUp.success };
 }
 
 export default withRouter(reduxForm({
