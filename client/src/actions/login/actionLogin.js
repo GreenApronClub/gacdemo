@@ -5,7 +5,6 @@ import { ROOT_URL } from '../../config/constants.js';
 export var IsLoggedIn = false;
 
 export function requestLogin(values, props) {
-  console.log(ROOT_URL);
   const request = axios.post(`${ROOT_URL}/login`, values)
 
   return (dispatch) => {
