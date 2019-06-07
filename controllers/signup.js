@@ -7,29 +7,28 @@ const window = (new JSDOM('')).window;
 const DOMPurify = createDompurify(window);
 const validator = require("validator");
 
-exports.register_user = (req, res, next) => {
-  var signupData = req.body;
+exports.register_user = (req, res, next) => {const signupData = req.body;
   console.log(req.body.email)
-  var cleanSignupData = {};
+  const cleanSignupData = {};
   if (!signupData.email || !signupData.password) {
     res.json({success: false, msg: 'Please enter an email and a password.'});
   } else if(!signupData.ageverification) {
     res.json({success: false, msg: 'You must be 21 years of age or older in the state of Massachusetts to use our services.'});
   } else {
-    for(var key in signupData) {
+    for(const key in signupData) {
       cleanSignupData[key] = DOMPurify.sanitize(signupData[key]);
       cleanSignupData[key] = validator.escape(cleanSignupData[key]);
     }
-    var validatedSignup = signupValidation.validate(
+    const validatedSignup = signupValidation.validate(
       cleanSignupData.email,
       cleanSignupData.firstname,
       cleanSignupData.lastname,
       cleanSignupData.password,
       cleanSignupData.ageverification
     );
-    var validatedSignupData = signupValidation.validatedSignupData;
+    const validatedSignupData = signupValidation.validatedSignupData;
     if (validatedSignup === true) {
-      var newUser = new User({
+      const newUser = new User({
         email: validatedSignupData.email.toLowerCase(),
         password: validatedSignupData.password,
         first_name: validatedSignupData.firstName,
