@@ -1,4 +1,4 @@
-var express               = require("express"),
+const express               = require("express"),
     app                   = express(),
     port                  = process.env.PORT || 8080,
     passport              = require("passport"),
@@ -15,7 +15,7 @@ var express               = require("express"),
     manageRoutes          = require("./api/routes/manage"),
     methodOverride        = require("method-override");
 
-var configDb = require("./config/database.js");
+const configDb = require("./config/database.js");
 const ErrorController = require('./controllers/error');
 
 // Mongoose config

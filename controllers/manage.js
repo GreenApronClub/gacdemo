@@ -9,79 +9,13 @@ const strain = require('../models/strain');
 const AWS = require('aws-sdk');
 const imageProc = require("../img_process/imageProcess");
 
-// exports.add_strain = (req, res, next) => {
-//   console.log(req.file);
-//   imageProc.processImage(req.file.path);
-//   var url = 'http://localhost:8080/';
-//   var imageUrl = url + req.file.path;
-//   var imagePath = imageUrl.replace("uploads\\", '/');
-//   var newstrainData = req.body;
-//   var cleanstrainData = {};
-//   for(var key in newstrainData) {
-//     cleanstrainData[key] = DOMPurify.sanitize(newstrainData[key]);
-//     cleanstrainData[key] = validator.escape(cleanstrainData[key]);
-//   }
-//   var validatedstrain = strainValidation.validate(
-//     cleanstrainData.price
-//   );
-//   var validatedstrainData = strainValidation.validatedstrainData;
-//   var newStrain = new strain({
-//     name: cleanstrainData.name.toLowerCase(),
-//     price: validatedstrainData.price,
-//     description: cleanstrainData.description,
-//     type: cleanstrainData.type,
-//     image: imagePath
-//   });
-//   newStrain.save(err => {
-//     if(err) {
-//       res.json({success: false, message: "Something went wrong!"});
-//     } else {
-//       res.json({ success: { message: 'successfully added to inventory', strain: cleanstrainData.name }});
-//     }
-//   })
-// }
-
 exports.add_strain = (req, res, next) => {
   console.log(req.file);
-  const s3 = new AWS.S3();
-  const fileName = req.file.originalname;
-  const fileType = req.file.mimetype;
-  const fileData = req.file.buffer;
-  const S3_BUCKET = process.env.S3_BUCKET;
-  const AWS_REGION = process.env.AWS_REGION;
-  AWS.config.region = AWS_REGION;
-  var params = {
-    Bucket: S3_BUCKET,
-    Key: fileName,
-    Body: fileData
-  };
-  s3.upload(params, function (err, data) {
-    if (err) {
-      console.log('error in callback');
-      console.log(err);
-    }
-    console.log('success');
-    console.log(data);
-  });
-  // const s3Params = {
-  //   Bucket: S3_BUCKET,
-  //   Key: fileName,
-  //   Expires: 60,
-  //   ContentType: fileType,
-  //   ACL: 'public-read'
-  // };
-  // s3.getSignedUrl('putObject', s3Params, (err, data) => {
-  //   if(err){
-  //     console.log(err);
-  //     return res.end();
-  //   }
-  //   const returnData = {
-  //     signedRequest: data,
-  //     url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
-  //   };
-  //   console.log(returnData)
-  //   res.write(JSON.stringify(returnData));
-  // });
+  imageProc.processImage(req.file.path);
+  var url = 'http://localhost:8080/';
+  console.log('PATH: ', req.file.path);
+  var imageUrl = url + req.file.path;
+  var imagePath = imageUrl.replace("uploads\\", '/');
   var newstrainData = req.body;
   var cleanstrainData = {};
   for(var key in newstrainData) {
@@ -92,13 +26,12 @@ exports.add_strain = (req, res, next) => {
     cleanstrainData.price
   );
   var validatedstrainData = strainValidation.validatedstrainData;
-  var imageURL = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
   var newStrain = new strain({
     name: cleanstrainData.name.toLowerCase(),
     price: validatedstrainData.price,
     description: cleanstrainData.description,
     type: cleanstrainData.type,
-    image: imageURL
+    image: imagePath
   });
   newStrain.save(err => {
     if(err) {
@@ -108,6 +41,74 @@ exports.add_strain = (req, res, next) => {
     }
   })
 }
+
+// exports.add_strain = (req, res, next) => {
+//   console.log(req.file);
+//   const s3 = new AWS.S3();
+//   const fileName = req.file.originalname;
+//   const fileType = req.file.mimetype;
+//   const fileData = req.file.buffer;
+//   const S3_BUCKET = process.env.S3_BUCKET;
+//   const AWS_REGION = process.env.AWS_REGION;
+//   AWS.config.region = AWS_REGION;
+//   var params = {
+//     Bucket: S3_BUCKET,
+//     Key: fileName,
+//     Body: fileData
+//   };
+//   s3.upload(params, function (err, data) {
+//     if (err) {
+//       console.log('error in callback');
+//       console.log(err);
+//     }
+//     console.log('success');
+//     console.log(data);
+//   });
+//   // const s3Params = {
+//   //   Bucket: S3_BUCKET,
+//   //   Key: fileName,
+//   //   Expires: 60,
+//   //   ContentType: fileType,
+//   //   ACL: 'public-read'
+//   // };
+//   // s3.getSignedUrl('putObject', s3Params, (err, data) => {
+//   //   if(err){
+//   //     console.log(err);
+//   //     return res.end();
+//   //   }
+//   //   const returnData = {
+//   //     signedRequest: data,
+//   //     url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+//   //   };
+//   //   console.log(returnData)
+//   //   res.write(JSON.stringify(returnData));
+//   // });
+//   var newstrainData = req.body;
+//   var cleanstrainData = {};
+//   for(var key in newstrainData) {
+//     cleanstrainData[key] = DOMPurify.sanitize(newstrainData[key]);
+//     cleanstrainData[key] = validator.escape(cleanstrainData[key]);
+//   }
+//   var validatedstrain = strainValidation.validate(
+//     cleanstrainData.price
+//   );
+//   var validatedstrainData = strainValidation.validatedstrainData;
+//   var imageURL = `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+//   var newStrain = new strain({
+//     name: cleanstrainData.name.toLowerCase(),
+//     price: validatedstrainData.price,
+//     description: cleanstrainData.description,
+//     type: cleanstrainData.type,
+//     image: imageURL
+//   });
+//   newStrain.save(err => {
+//     if(err) {
+//       res.json({success: false, message: "Something went wrong!"});
+//     } else {
+//       res.json({ success: { message: 'successfully added to inventory', strain: cleanstrainData.name }});
+//     }
+//   })
+// }
 
 exports.get_strains = (req, res) => {
   var query = strain.find({}).select('name price image _id');
