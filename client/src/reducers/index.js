@@ -1,4 +1,5 @@
-import {  combineReducers } from 'redux';
+import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import SignUpReducer from './sign_up/reducerSignUp';
 import SessionReducer from './login/session';
 import StrainsReducer from './strains/reducerStrains';
@@ -9,7 +10,6 @@ import EditStrainPreviewReducer from './strains/reducerStrainPreview';
 import RemoveStrainReducer from './manage_strains/reducerRemoveStrain';
 import NavigationReducer from './navigation/reducer_navigation';
 import ImageUploadReducer from './upload/reducerImageUpload';
-import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
   signUp: SignUpReducer,
@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
   editStrainPreview: EditStrainPreviewReducer,
   removeStrain: RemoveStrainReducer,
   imageData: ImageUploadReducer,
-  form: formReducer
+  form: formReducer,
 });
 
 export default rootReducer;

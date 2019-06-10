@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import requestSignUp from '../../helpers/requestSignUp.js';
 import { signUpSuccess, signUpError, clearSignUpErrorMessage } from '../../actions/sign_up/actionSignUp.js';
-import './signup.css';
+import '../css/signup.css';
 import './media-queries-signup.css';
 
 class SignUp extends Component {

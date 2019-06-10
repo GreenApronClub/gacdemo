@@ -1,105 +1,137 @@
+// NODE_MODULES
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import { clearMessage } from '../../actions/clear/clearAlert';
-import { requestLogin } from '../../actions/login/actionLogin';
+import PropTypes from 'prop-types';
+// MATERIAL UI
+import Card from '@material-ui/core/Card';
+import { withStyles } from '@material-ui/core/styles';
+// ACTION CREATORS
+import { loginActions, alertActions } from '../../actions';
 import * as types from '../../actions/actionTypes';
-import './login.css';
 import './media-queries-login.css';
+import '../css/login.css';
+
+const styles = {
+  card: {
+    minWidth: 275,
+    backgroundColor: '#fff',
+  },
+};
 
 class Login extends Component {
-  componentWillUnmount() {
-    const errorMessage = '';
-    const success = {success: {}};
-    this.props.clearMessage(errorMessage, types.LOGIN_ERROR)
-    this.props.clearMessage(success, types.SIGN_UP_SUCCESS)
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    clearMessage: PropTypes.func.isRequired,
+    requestLogin: PropTypes.func.isRequired,
+    signUpSuccess: PropTypes.object.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
   }
 
-  renderEmailField(field) {
-    return (
+  componentWillUnmount() {
+    const { clearMessage } = this.props;
+    const errorMessage = '';
+    const success = { success: {} };
+    clearMessage(errorMessage, types.LOGIN_ERROR);
+    clearMessage(success, types.SIGN_UP_SUCCESS);
+  }
+
+  renderEmailField = field => (
     <div className="form-group">
       <div className="input-group">
         <div className="input-group-prepend">
           <div className="input-group-text">
-            <i className="ion-email"></i>
+            <i className="ion-email" />
           </div>
         </div>
-        <input id="email-input" className="form-control"
+        <input
+          id="email-input"
+          className="form-control"
           type="email"
-          maxLength="62" required placeholder="Email"
-          {...field.input} />
+          maxLength="62"
+          required
+          placeholder="Email"
+          {...field.input}
+        />
       </div>
     </div>
-    );
-  }
+  );
 
-  renderPasswordField(field) {
-    return (
-      <div className="form-group">
-        <div className="input-group">
-          <div className="input-group-prepend">
-            <div className="input-group-text">
-              <i className="ion-locked"></i>
-            </div>
+  renderPasswordField = field => (
+    <div className="form-group">
+      <div className="input-group">
+        <div className="input-group-prepend">
+          <div className="input-group-text">
+            <i className="ion-locked" />
           </div>
-          <input className="form-control"
-            type="password" maxLength="62" required placeholder="Password"
-            {...field.input} />
         </div>
-     </div>
-    );
-  }
+        <input
+          className="form-control"
+          type="password"
+          maxLength="62"
+          required
+          placeholder="Password"
+          {...field.input}
+        />
+      </div>
+    </div>
+  );
 
-  onSubmit(values) {
-    this.props.requestLogin(values, this.props);
+  onSubmit = (values) => {
+    const { requestLogin } = this.props;
+    requestLogin(values, this.props);
   }
 
   render() {
-    const { handleSubmit } = this.props;
-    const success = {success: {}};
-    var passwordAlertClass = classNames({
+    const {
+      classes,
+      handleSubmit,
+      signUpSuccess,
+      errorMessage,
+      clearMessage,
+    } = this.props;
+    const { message } = signUpSuccess;
+    const success = { success: {} };
+    const passwordAlertClass = classNames({
       'validation-close': true,
-      'validation-alert': this.props.errorMessage
+      'validation-alert': errorMessage,
     });
-    var customAlert = classNames({
-      'custom-alert': this.props.signUpSuccess.message,
-      'custom-alert-close': true
+    const customAlert = classNames({
+      'custom-alert': message,
+      'custom-alert-close': true,
     });
-    return(
+    return (
       <div className="form-content">
         <form className="login-form" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-          <div className={customAlert}>
-            <p>{this.props.signUpSuccess.message}</p>
-            <button type="button" className="custom-close" onClick={() => this.props.clearMessage(success, types.SIGN_UP_SUCCESS)}>
-              <span aria-hidden="true"><i className="ion-ios-checkmark"></i></span>
-            </button>
-          </div>
-          <Field label="Email" name="email" component={this.renderEmailField} />
-          <Field label="Password" name="password" component={this.renderPasswordField} />
-          <div className={passwordAlertClass}><p>{this.props.errorMessage}</p></div>
-          <div className="button-form">
-            <button className="login-button" type="submit">Login</button>
-          </div>
+          <Card className={classes.card}>
+            <div className={customAlert}>
+              <p>{message}</p>
+              <button type="button" className="custom-close" onClick={() => clearMessage(success, types.SIGN_UP_SUCCESS)}>
+                <span aria-hidden="true"><i className="ion-ios-checkmark" /></span>
+              </button>
+            </div>
+            <Field label="Email" name="email" component={this.renderEmailField} />
+            <Field label="Password" name="password" component={this.renderPasswordField} />
+            <div className={passwordAlertClass}><p>{errorMessage}</p></div>
+            <div className="button-form">
+              <button className="login-button" type="submit">Login</button>
+            </div>
+          </Card>
         </form>
       </div>
     );
   }
 }
 
-function validate(values) {
+const validate = (values) => {
   const errors = {};
-
-  if(!values.email || values.email.length < 6) {
-    errors.email = "Please enter a valid email address";
-  }
-  if(!values.password) {
-    errors.password = "Please enter your password";
-  }
-
+  if (!values.email || values.email.length < 6) { errors.email = 'Please enter a valid email address'; }
+  if (!values.password) { errors.password = 'Please enter your password'; }
   return errors;
-}
+};
 
 const mapStateToProps = state => ({
   errorMessage: state.session.errorMessage,
@@ -107,9 +139,14 @@ const mapStateToProps = state => ({
   signUpSuccess: state.signUp.success,
 });
 
+const mapDispatchToProps = {
+  requestLogin: loginActions.requestLogin,
+  clearMessage: alertActions.clearMessage,
+};
+
 export default withRouter(reduxForm({
   validate,
-  form: 'LoginForm'
+  form: 'LoginForm',
 })(
-  connect(mapStateToProps, { requestLogin, clearMessage })(Login)
+  connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Login)),
 ));

@@ -1,36 +1,38 @@
 export default {
   loginData: {
-    errorMessage: null,
-    isLoggedIn: false
+    errorMessage: '',
+    isLoggedIn: false,
   },
   strainList: {
-    errorMessage: null,
-    strains: []
+    errorMessage: '',
+    strains: [],
   },
   strain: {
-    errorMessage: null,
+    errorMessage: '',
     strainData: ''
   },
   editStrainPreview: {
-    errorMessage: null,
-    strain: null
+    errorMessage: '',
+    strain: '',
   },
   signUp: {
-    success: {},
-    error: {}
+    success: {
+      message: '',
+    },
+    error: {},
   },
   addStrain: {
     success: {},
-    error: {}
+    error: {},
   },
   removeStrain: {
-    success: {}
+    success: {},
   },
   editStrain: {
-    success: {}
+    success: {},
   },
   imageUpload: {
-    imageSrc: "http://nahmdong.com/vitalhill/img/default.png",
-    imageName: ''
-  }
-}
+    imageSrc: 'http://nahmdong.com/vitalhill/img/default.png',
+    imageName: '',
+  },
+};
