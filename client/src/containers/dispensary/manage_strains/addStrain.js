@@ -80,6 +80,7 @@ class AddStrain extends Component {
           field.input.onChange(files[0]);
           var reader = new FileReader();
           reader.onload = (image) => {
+
             var imageData = { name: files[0].name, image: image.target.result }
             this.props.selectedImage(imageData);
           };
@@ -92,6 +93,7 @@ class AddStrain extends Component {
   }
 
   onSubmit(values) {
+    console.log('VALUES: ', values);
     this.props.addStrain(values);
   }
 
