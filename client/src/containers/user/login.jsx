@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 // MATERIAL UI
 import Card from '@material-ui/core/Card';
 import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 // ACTION CREATORS
 import { loginActions, alertActions } from '../../actions';
 import * as types from '../../actions/actionTypes';
@@ -40,24 +41,35 @@ class Login extends Component {
   }
 
   renderEmailField = field => (
-    <div className="form-group">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <div className="input-group-text">
-            <i className="ion-email" />
-          </div>
-        </div>
-        <input
-          id="email-input"
-          className="form-control"
-          type="email"
-          maxLength="62"
-          required
-          placeholder="Email"
-          {...field.input}
-        />
-      </div>
-    </div>
+    // <div className="form-group">
+    //   <div className="input-group">
+    //     <div className="input-group-prepend">
+    //       <div className="input-group-text">
+    //         <i className="ion-email" />
+    //       </div>
+    //     </div>
+    //     <input
+    //       id="email-input"
+    //       className="form-control"
+    //       type="email"
+    //       maxLength="62"
+    //       required
+    //       placeholder="Email"
+    //       {...field.input}
+    //     />
+    //   </div>
+    // </div>
+    <TextField
+      required
+      autoFocus
+      // className={classes.margin}
+      id="input-with-icon-textfield"
+      label="User"
+      name="user"
+      {...field.input}
+      // value={user}
+      // onChange={this.handleUserInput}
+    />
   );
 
   renderPasswordField = field => (

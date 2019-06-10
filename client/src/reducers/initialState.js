@@ -9,7 +9,7 @@ export default {
   },
   strain: {
     errorMessage: '',
-    strainData: ''
+    strainData: '',
   },
   editStrainPreview: {
     errorMessage: '',
