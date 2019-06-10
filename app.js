@@ -24,7 +24,7 @@ mongoose.connect(configDb.url) // Uses specified url to connect to mongodb
 .then(() => console.log('MongoDb Connection Established:'))
 .catch((err) => console.log(err));
 
-
+app.set('view engine', 'ejs')
 app.use(express.static("public")); // Css/js resources
 app.use(express.static("uploads"));
 app.use(morgan('dev'));
@@ -48,6 +48,9 @@ console.log("PLATFORM MODE: " + process.env.NODE_ENV);
 app.use(passport.initialize());
 console.log("CURRENT PORT: " + process.env.PORT);
 
+app.get('/', (req, res) => {
+  res.render('home')
+});
 app.use('/login', loginRoutes);
 app.use('/signup', signupRoutes);
 app.use('/manage/strains', manageRoutes);

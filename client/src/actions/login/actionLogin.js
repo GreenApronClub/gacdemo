@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
-import { ROOT_URL } from '../../config/constants.js';
+import ROOT_URL from '../../config/constants.js';
 
 export var IsLoggedIn = false;
 

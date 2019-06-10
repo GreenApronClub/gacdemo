@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from '../actionTypes';
-import { ROOT_URL } from '../../config/constants';
+import ROOT_URL from '../../config/constants';
 
 export function fetchStrains(values) {
   const request = axios.get(`${ROOT_URL}/manage/strains`);

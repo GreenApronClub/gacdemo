@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/signup.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <title>Green Apron</title>
+    </head>
+    <body>
+        <header>
+            <nav class="static">
+                <div class="row">
+                    <a href="/"><img src="resources/img/greenapron-logo.png" alt="Omnifood logo" class="logo"></a>
+                    <a href="/"><img src="resources/img/greenapron-logo.png" alt="Omnifood logo" class="logo-small"></a>
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/partners">Partners</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Form Section -->
+        <div class="form">
+            <ul class="tab-group">
+              <li class="tab"><a href="/signup">SIGN UP</a></li>
+              <li class="tab active"><a href="/login">LOGIN</a></li>
+            </ul>
+            <div class="tab-form">
+              <div id="signup">
+                <h1>Sign up for the <span>Beta</span></h1>
+                <form action="/signup" method="post">
+                <div class="top-row">
+                  <div class="field-wrap">
+                    <label>First Name<span class="req">*</span></label>
+                    <input type="text" name="firstname" required autocomplete="off" />
+                  </div>
+                  <div class="field-wrap">
+                    <label>Last Name<span class="req">*</span></label>
+                    <input type="text" name="lastname" required autocomplete="off"/>
+                  </div>
+                </div>
+                <div class="field-wrap">
+                  <label>Username<span class="req">*</span></label>
+                  <input type="text" name="username" required autocomplete="off"/>
+                </div>
+                <div class="field-wrap">
+                  <label>Password<span class="req">*</span></label>
+                  <input type="password" name="password" required autocomplete="off"/>
+                </div>
+                <div class="button-container">
+                  <button type="submit" class="button button-block"/>Let's do this!</button>
+                </div>
+                </form>
+              </div>
+            </div>
+      </div>
+      <!--- Footer section --->
+      <footer>
+          <div class="row">
+              <div class="col span-1-of-2">
+                  <ul class="footer-nav">
+                      <li><a href="/about-us">About Us</a></li>
+                      <li><a href="/blog">Blog</a></li>
+                      <li><a href="/press">Press</a></li>
+                      <li><a href="/drive-for-us">Drive for us</a></li>
+                      <li><a href="/help">Help</a></li>
+                  </ul>
+              </div>
+              <div class="col span-1-of-2">
+                  <ul class="social-links">
+                      <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                      <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                      <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                      <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                      <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row">
+              <p>Copyright &copy; 2017 by Green Apron. All rights reserved.</p>
+          </div>
+      </footer>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script src="vendors/js/jquery.waypoints.min.js"></script>
+      <script src="resources/js/signup.js"></script>
+    </body>
+</html>
